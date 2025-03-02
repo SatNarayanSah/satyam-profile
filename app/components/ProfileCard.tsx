@@ -9,8 +9,6 @@ interface ProfileCardProps {
 
 const ProfileCard = ({ profile }: ProfileCardProps) => {
     const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
-    
-
 
     useEffect(() => {
         // Cycle through titles every 5 seconds
@@ -23,13 +21,13 @@ const ProfileCard = ({ profile }: ProfileCardProps) => {
 
     return (
         <motion.div
-            className="w-full max-w-6xl bg-gray-900 relative  rounded-lg shadow-3xl overflow-hidden"
+            className="w-full bg-gray-900 relative rounded-lg shadow-3xl overflow-hidden"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
         >
             {/* Banner Section */}
-            <div className="relative h-64 overflow-hidden z-0">
+            <div className="relative h-48 lg:h-64 overflow-hidden z-0">
                 <div className="absolute inset-0">
                     <img
                         src={profile.bannerImages}
@@ -41,10 +39,10 @@ const ProfileCard = ({ profile }: ProfileCardProps) => {
 
             {/* Profile Content */}
             <div className="round">
-                <div className="p-8 text-center relative z-20">
+                <div className="p-4 lg:p-8 text-center relative z-20">
                     {/* Avatar */}
                     <motion.div
-                        className="w-44 h-44 mx-auto -mt-40 rounded-full border-4 border-orange-300 shadow-orange-300 overflow-hidden  z-30"
+                        className="w-32 h-32 lg:w-44 lg:h-44 mx-auto -mt-20 lg:-mt-40 rounded-full border-4 border-orange-300 shadow-orange-300 overflow-hidden z-30"
                         whileHover={{ scale: 1.1 }}
                     >
                         <img
@@ -56,7 +54,7 @@ const ProfileCard = ({ profile }: ProfileCardProps) => {
 
                     {/* Name */}
                     <motion.h1
-                        className="text-3xl font-bold mt-4 text-white"
+                        className="text-2xl lg:text-3xl font-bold mt-4 text-white"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.5 }}
@@ -66,20 +64,20 @@ const ProfileCard = ({ profile }: ProfileCardProps) => {
 
                     {/* Title (Typing Animation) */}
                     <div className="text-lg text-gray-400 mt-2 h-6 overflow-hidden">
-            <Typewriter
-                options={{
-                    strings: [profile.title[currentTitleIndex]], // Current title
-                    autoStart: true, // Start typing automatically
-                    loop: false, // Don't loop the current string
-                    delay: 100, // Typing speed (100ms per character)
-                    deleteSpeed: 50, // Deleting speed (50ms per character)
-                    cursor: "|", // Custom cursor
-                }}
-            />
-        </div>
+                        <Typewriter
+                            options={{
+                                strings: [profile.title[currentTitleIndex]], // Current title
+                                autoStart: true, // Start typing automatically
+                                loop: false, // Don't loop the current string
+                                delay: 100, // Typing speed (100ms per character)
+                                deleteSpeed: 50, // Deleting speed (50ms per character)
+                                cursor: "|", // Custom cursor
+                            }}
+                        />
+                    </div>
 
                     {/* Social Links */}
-                    <div className="flex justify-center mt-6 mb-16 space-x-4">
+                    <div className="flex justify-center mt-4 mb-24 space-x-4">
                         {profile.socialLinks.map((link, index) => (
                             <motion.a
                                 key={index}
@@ -96,31 +94,31 @@ const ProfileCard = ({ profile }: ProfileCardProps) => {
                     </div>
 
                     {/* Buttons */}
-                    <div className="absolute bottom-0 flex items-center left-0 justify-between w-full">
-            {profile.buttons.map((button, index) => (
-                <motion.a
-                    key={index}
-                    href={button.url}
-                    className={`flex items-center gap-2 px-6 py-4 text-center w-full relative 
+                    <div className="absolute bottom-0 flex items-center left-0 justify-between w-full text-sm lg:text-base">
+                        {profile.buttons.map((button, index) => (
+                            <motion.a
+                                key={index}
+                                href={button.url}
+                                className={`flex items-center gap-2 px-6 py-4 text-center w-full relative 
                         ${index === 1 ? " text-white bg-gray-800" : "bg-gray-800 text-white"} 
                         hover:bg-opacity-90 transition-all duration-300`}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    style={{
-                        borderImage: "linear-gradient(to right, #1f2937, #ffffff, #1f2937) 1", // Gradient border
-                        borderWidth: "1px", // Border width
-                        borderStyle: "solid", // Border style
-                    }}
-                >
-                    {/* Gradient Border Overlay */}
-                    <div className="absolute inset-0 border-l border-r border-t border-transparent  hover:opacity-100 transition-opacity duration-300"></div>
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                style={{
+                                    borderImage: "linear-gradient(to right, #1f2937, #ffffff, #1f2937) 1", // Gradient border
+                                    borderWidth: "1px", // Border width
+                                    borderStyle: "solid", // Border style
+                                }}
+                            >
+                                {/* Gradient Border Overlay */}
+                                <div className="absolute inset-0 border-l border-r border-t border-transparent  hover:opacity-100 transition-opacity duration-300"></div>
 
-                    {/* Button Content */}
-                    <span className="text-sm z-10">{button.text}</span>
-                    <img src={button.icon} className="w-4 h-4 z-10" alt="icons" />
-                </motion.a>
-            ))}
-        </div>
+                                {/* Button Content */}
+                                <span className="text-sm z-10">{button.text}</span>
+                                <img src={button.icon} className="w-4 h-4 z-10" alt="icons" />
+                            </motion.a>
+                        ))}
+                    </div>
                 </div>
             </div>
         </motion.div>

@@ -28,19 +28,19 @@ export default function Profile() {
     }, []);
 
     if (loading) {
-        return <div className="text-white">Loading...</div>;
+        return <div className="text-white text-center">Loading...</div>;
     }
 
     if (error) {
-        return <div className="text-white">Error: {error}</div>;
+        return <div className="text-white text-center">Error: {error}</div>;
     }
 
     if (!profile) {
-        return <div className="text-white">No profile data available.</div>;
+        return <div className="text-white text-center">No profile data available.</div>;
     }
 
     return (
-        <div className=" flex items-center justify-center">
+        <div className="w-full px-4 lg:px-0 lg:w-96 flex items-center justify-center">
             <ProfileCard profile={profile} />
         </div>
     );

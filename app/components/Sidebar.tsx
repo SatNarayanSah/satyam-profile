@@ -32,28 +32,28 @@ const menuItemVariants = {
 export default function Sidebar() {
   return (
     <motion.div
-      className="h-fit w-16 bg-gray-900 text-white"
+      className="w-full lg:w-16 bg-gray-900 text-white"
       variants={sidebarVariants}
       initial="hidden"
       animate="visible"
     >
-      <nav>
+      <nav className="flex lg:flex-col justify-around lg:justify-start">
         {menuItems.map((item, index) => (
           <motion.div
             key={item.id}
             data-id={item.id}
-            className="py-4 border-b border-gray-500 shadow-xl"
+            className="py-3 lg:py-4 lg:border-b border-gray-500 shadow-xl"
             variants={menuItemVariants}
             initial="hidden"
             animate="visible"
-            transition={{ delay: index * 0.2 }} // Staggered delay for each item
+            transition={{ delay: index * 0.2 }}
           >
             <Link
               to={item.href}
-              className="flex flex-col items-center justify-center gap-2"
+              className="flex flex-col items-center justify-center gap-1 lg:gap-2"
             >
               <img src={item.icon} className="w-4 h-4" alt="icon" />
-              <span className="text-xs">{item.name}</span>
+              <span className="text-[10px] lg:text-xs">{item.name}</span>
             </Link>
           </motion.div>
         ))}

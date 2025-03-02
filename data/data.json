@@ -23,5 +23,48 @@
       "icon": "/icons/dowload.svg"
     },
     { "text": "Contact Me", "url": "#contact", "icon": "/icons/contact-me.svg" }
+  ],
+  "AboutSection": "ABOUT ME",
+  "AboutSectionTitle": "About Me",
+  "description": "Hi, my self Sat Narayan Sah and Welcome! I am a highly experienced web developer with a strong track record of delivering successful live projects. With a keen eye for detail and a commitment to excellence, I specialize in creating responsive and user-friendly websites that meet client needs and exceed expectations. WordPress sites go beyond with exclusive designer.",
+  "skills": [
+    "HTML5 & CSS",
+    "Bootstrap",
+    "TailwindCSS",
+    "PHP",
+    "JavaScript",
+    "ReactJs",
+    "Angular3",
+    "Python",
+    "Django"
+  ],
+  "contactInfo": [
+    { "label": "Phone", "value": "+977-9812039791", "link": "callto:+977-9812039791" },
+    { "label": "Email", "value": "satnarayan5166@gmail.com", "link": "mailto:satnarayan5166@gmail.com" },
+    { "label": "Skype", "value": "Sat Narayan Sah" },
+    { "label": "Github", "value": "github.com/SatNarayanSah/" },
+    { "label": "Language", "value": "Nepali, English, Hindi, Maithili" }
+  ],
+  "counters": [
+    { "number": "3+", "label": "Years Of Experience" },
+    { "number": "6+", "label": "Handled Projects" },
+    { "number": "05+", "label": "Open Source Libraries" }
+  ],
+  "ServiceectionName": "SERVICES",
+  "ServiceSectionTitle": "My Services",
+  "ServiceDescription": "I offer professional web development services, delivering high-quality, responsive, and user-friendly websites tailored to your specific needs.",
+  "services": [
+    {
+      "id": 1,
+      "icon": "images/mobile.png",
+      "title": "Full-Stack Web Development",
+      "description": "I offer professional web development services, crafting responsive and user-friendly websites that meet your business needs and exceed your expectations."
+    },
+    {
+      "id": 2,
+      "icon": "images/graphics_designing.png",
+      "title": "Graphics Designing",
+      "description": "I offer exceptional graphic design services, creating stunning visuals to elevate your brand and captivate your audience with professional, eye-catching designs."
+    }
   ]
 }
