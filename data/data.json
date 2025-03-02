@@ -1,0 +1,27 @@
+{
+  "name": "Sat Narayan Sah",
+  "avatar": "/images/satyam.jpg",
+  "bannerImages": "/images/banner1.jpg",
+  
+  "title": [
+    "Full - Stack Developer",
+    "Graphics Designer",
+    "Freelancer"
+    
+  ],
+  "socialLinks": [
+    { "icon": "/icons/facebook.svg", "url": "https://dribbble.com/" },
+    { "icon": "/icons/instagram.svg", "url": "https://twitter.com/" },
+    { "icon": "/icons/github.svg", "url": "https://github.com/" },
+    { "icon": "/icons/linkedin.svg", "url": "https://stackoverflow.com/" },
+    { "icon": "/icons/whatsapp.svg", "url": "https://www.whatsapp.com/" }
+  ],
+  "buttons": [
+    {
+      "text": "Download CV",
+      "url": "https://ryancv.bslthemes.com/wp-content/uploads/2022/07/Dublin-Resume-Template-Modern.pdf",
+      "icon": "/icons/dowload.svg"
+    },
+    { "text": "Contact Me", "url": "#contact", "icon": "/icons/contact-me.svg" }
+  ]
+}
