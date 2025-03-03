@@ -3,11 +3,11 @@ import { Link } from "@remix-run/react";
 import { motion } from "framer-motion";
 
 const menuItems = [
-  { id: "1", href: "#home", icon: "/icons/user.svg", name: "About" },
+  { id: "1", href: "#about", icon: "/icons/user.svg", name: "About" },
   { id: "2", href: "#resume", icon: "/icons/resume.svg", name: "Resume" },
-  { id: "3", href: "#works", icon: "/icons/work.svg", name: "Works" },
+  { id: "5", href: "#skill", icon: "/icons/product.svg", name: "Skills" },
+  { id: "3", href: "#project", icon: "/icons/work.svg", name: "Projects" },
   { id: "4", href: "#contact", icon: "/icons/contact.svg", name: "Contact" },
-  { id: "5", href: "#products", icon: "/icons/product.svg", name: "Products" },
 ];
 
 // Animation variants for the header

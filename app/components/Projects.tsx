@@ -36,7 +36,7 @@ const Projects = () => {
 
   return (
     <>
-      <div className="bg-gray-900 p-5 py-7 rounded-3xl mt-5">
+      <div className="bg-gray-900 p-5 py-7 rounded-3xl mt-5" id="project">
         <div>
           <div className="inline-flex items-center gap-4 px-4 py-2 text-xs tracking-wide text-white border lg:px-5 border-dashed rounded-full shadow-orange-300 uppercase">
             <img src="/icons/product.svg" className="w-4 h-4" alt="icons" />

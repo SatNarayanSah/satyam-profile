@@ -42,7 +42,7 @@ export default function Resume() {
   const { ResumeTitle, experiences, educations, skills, knowledge, languages } = data;
 
   return (
-    <div className="min-h-screen bg-gray-900 rounded-3xl mt-4 py-12">
+    <div className="min-h-screen bg-gray-900 rounded-3xl mt-4 py-12" id="resume">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Title Section */}
         <motion.div
