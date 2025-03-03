@@ -1,44 +1,7 @@
-import SkillProgress from "./SkillProgress";
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import type { Skills } from "~/types/types";
-
+import {motion} from "framer-motion"
+import data from "../../data/data.json"
 export default function SkillsSection() {
-  const [skills, setSkills] = useState<Skills[] | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    // Fetch data asynchronously
-    const fetchData = async () => {
-      try {
-        const response = await fetch("/data/data.json"); // Adjust the path if needed
-        if (!response.ok) {
-          throw new Error("Failed to fetch data");
-        }
-        const data = await response.json();
-        setSkills(data.skills); // Access the `skills` array from the JSON
-      } catch (err) {
-        setError(err instanceof Error ? err.message : "An unknown error occurred");
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  if (loading) {
-    return <div className="text-white text-center">Loading...</div>;
-  }
-
-  if (error) {
-    return <div className="text-white text-center">Error: {error}</div>;
-  }
-
-  if (!skills) {
-    return <div className="text-white text-center">No skills data available.</div>;
-  }
+const {skills} = data
 
   return (
     <motion.div
