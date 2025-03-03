@@ -57,6 +57,7 @@ export default function ProjectCard({ projects }: ProjectCardProps) {
             {project.buttons.map((button, index) => (
               <motion.a
                 key={index}
+                target="_blank"
                 href={button.url}
                 className={`flex items-center gap-2 px-6 py-4 text-center w-full transition-all duration-300
                   ${index === 1 ? "text-white bg-gray-800" : "bg-gray-800 text-white"} 

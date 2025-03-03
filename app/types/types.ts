@@ -20,7 +20,7 @@ export interface ProfileData {
     }[];
     educations: {
       institution: string;
-      location: string;
+      Field: string;
       duration: string;
       description: string; // Fixed typo: "desciption" -> "description"
     }[];

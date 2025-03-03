@@ -59,9 +59,15 @@
     },
     {
       "id": 3,
-      "icon": "images/digital-marketing.png",
+      "icon": "/icons/digital.png",
       "title": "Digital Marketing",
       "description": "Unlock your business's potential with expert digital marketing strategies tailored to drive results. Let's grow your brand together!"
+    },
+    {
+      "id": 4,
+      "icon": "/icons/email-marketing.png",
+      "title": "Email Marketing",
+      "description": "Boost your brand's engagement with personalized email marketing campaigns that convert. Let's turn your emails into powerful sales tools!"
     }
   ],
   "skills": [
@@ -130,42 +136,42 @@
   "ResumeTitle": "Resume",
   "experiences": [
     {
-      "title": "Team Leader",
-      "company": "Facebook Inc.",
-      "duration": "2018 - Present",
-      "description": "Collaborate with creative and development teams."
+      "title": "Freelancer.",
+      "company": "Remote",
+      "duration": "2023 - Present",
+      "description": "Website & WebApp Devlopment, Graphics Designing, Email Marketing, Data Entry, Record Management, Data Tracking"
     },
     {
-      "title": "Web Developer",
-      "company": "Upwork Inc.",
-      "duration": "2016 - 2018",
-      "description": "Monitored technical aspects of the front-end delivery for projects."
+      "title": "System Engineer",
+      "company": "मिथिला विकास कोष",
+      "duration": "2023 - 2024",
+      "description": "aintenance of Computer, Technical Support on Creating and Publishing Informations Data Management and tracking"
     },
     {
-      "title": "Software Developer",
-      "company": "Envato Inc.",
-      "duration": "2014 - 2016",
-      "description": "Optimize website and apps performance using latest technology."
+      "title": "System Engineer",
+      "company": "MREC College",
+      "duration": "2012 - 2013",
+      "description": "Maintainance the System of lab,  Helping Students During the Practical, Question Typing"
     }
   ],
   "educations": [
     {
-      "institution": "Stamford University",
-      "location": "United States",
-      "duration": "2010 - 2014",
-      "description": "Stanford University Private university in Stanford, California."
+      "institution": "Janakpur Community College",
+      "Field": "Bachlore of Information Technology",
+      "duration": "2023 - Present",
+      "description": "Currently, I am pursuing a BIT degree, have completed a Diploma in Computer Engineering, and am actively working on live web development projects."
     },
     {
-      "institution": "Programming Course",
-      "location": "London",
-      "duration": "2009 - 2010",
-      "description": "Coursework - Git, WordPress, Javascript, iOS, Android."
+      "institution": "Madhyamanchal Regional Engineering College",
+      "Field": "Diploma in Computer Engineering",
+      "duration": "2018 - 2022",
+      "description": ""
     },
     {
-      "institution": "London School",
-      "location": "London",
-      "duration": "1999 - 2009",
-      "description": "Converted Photoshop layouts to web pages using HTML, CSS, and JavaScript."
+      "institution": "Shree Girija Secondary School Phulgama-2",
+      "Field": "SEE (Secondary Education Examination)",
+      "duration": "2008-2018",
+      "description": ""
     }
   ],
   
@@ -180,10 +186,10 @@
     { "name": "Search engine marketing" }
   ],
   "languages": [
-    { "name": "English", "level": 90 },
-    { "name": "German", "level": 60 },
-    { "name": "Italian", "level": 30 },
-    { "name": "French", "level": 70 }
+    { "name": "Maithili", "level": 99 },
+    { "name": "Nepali", "level": 90 },
+    { "name": "English", "level": 85 },
+    { "name": "Hindi", "level": 80 }
   ],
   "contact": {
     "title": "Contact Me.",
@@ -213,11 +219,9 @@
     {
       "id": 1,
       "image": "/images/digine[tronics.png",
-      "alt": "Mithila Art Classifier",
-      "title": "Mithila Art Classification Web App",
-      "githubLink": "#",
-      "livePreviewLink": "#",
-      "tags": ["#tensorflow", "#keras", "#nextjs", "#django", "#python"],
+      "alt": "digineptronics",
+      "title": " Business website",
+      "tags": ["#react", "#tailwind", "#django", "#js",  "#python"],
       "buttons": [
         {
           "text": "Github",
@@ -233,12 +237,10 @@
     },
     {
       "id": 2,
-      "image": "/images/digine[tronics.png",
+      "image": "/images/site.png",
       "alt": "Mithila Art Classifier",
-      "title": "Mithila Art Classification Web App",
-      "githubLink": "#",
-      "livePreviewLink": "#",
-      "tags": ["#tensorflow", "#keras", "#nextjs", "#django", "#python"],
+      "title": "Education Website",
+      "tags": ["#HTML", "#CSS", "#JS", "#PHP"],
       "buttons": [
         {
           "text": "Github",
@@ -254,21 +256,19 @@
     },
     {
       "id": 3,
-      "image": "/images/digine[tronics.png",
-      "alt": "Mithila Art Classifier",
-      "title": "Mithila Art Classification Web App",
-      "githubLink": "#",
-      "livePreviewLink": "#",
-      "tags": ["#tensorflow", "#keras", "#nextjs", "#django", "#python"],
+      "image": "/images/advice.png",
+      "alt": "images",
+      "title": "Advice Generator Website",
+      "tags": ["#reactJs", "#TailwindCSs", "#OpenAPI", "#JS", "#Node"],
       "buttons": [
         {
           "text": "Github",
-          "url": "https://github.com",
+          "url": "https://github.com/SatNarayanSah/advice-sgenerator-app",
           "icon": "/icons/github.svg"
         },
         {
           "text": "View",
-          "url": "#contact",
+          "url": "https://satnarayansah-advice-sgenerator-app.vercel.app/",
           "icon": "/icons/eye.svg"
         }
       ]

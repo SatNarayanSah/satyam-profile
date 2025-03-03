@@ -117,8 +117,8 @@ export default function Resume() {
                   {/* Content */}
                   <div className="border-b border-dashed border-orange-300 py-5">
                     <h3 className="text-xl font-semibold text-gray-300">{edu.institution}</h3>
-                    <p className="text-gray-500">
-                      {edu.location} | <span>{edu.duration}</span>
+                    <p className="text-orange-300 flex flex-col ">
+                      {edu.Field}   <span className="text-gray-400">{edu.duration}</span>
                     </p>
                     <p className="text-gray-700 mt-2">{edu.description}</p>
                   </div>
