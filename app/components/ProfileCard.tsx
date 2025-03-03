@@ -85,7 +85,7 @@ const ProfileCard = ({ profile }: ProfileCardProps) => {
                                 href={link.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className=" border p-2 rounded-full border-orange-300 shadow-white shadow-sm"
+                                className=" border p-2 rounded-full border-orange-300 shadow-white shadow-md"
                                 whileHover={{ scale: 1.2 }}
                                 whileTap={{ scale: 0.9 }}
                             >

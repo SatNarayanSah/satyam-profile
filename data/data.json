@@ -120,5 +120,64 @@
       "icon": "/images/jquery.svg",
       "percent": 70
     }
+  ],
+  "ResumeTitle": "Resume",
+  "experiences": [
+    {
+      "title": "Team Leader",
+      "company": "Facebook Inc.",
+      "duration": "2018 - Present",
+      "description": "Collaborate with creative and development teams."
+    },
+    {
+      "title": "Web Developer",
+      "company": "Upwork Inc.",
+      "duration": "2016 - 2018",
+      "description": "Monitored technical aspects of the front-end delivery for projects."
+    },
+    {
+      "title": "Software Developer",
+      "company": "Envato Inc.",
+      "duration": "2014 - 2016",
+      "description": "Optimize website and apps performance using latest technology."
+    }
+  ],
+  "educations": [
+    {
+      "institution": "Stamford University",
+      "location": "United States",
+      "duration": "2010 - 2014",
+      "description": "Stanford University Private university in Stanford, California."
+    },
+    {
+      "institution": "Programming Course",
+      "location": "London",
+      "duration": "2009 - 2010",
+      "description": "Coursework - Git, WordPress, Javascript, iOS, Android."
+    },
+    {
+      "institution": "London School",
+      "location": "London",
+      "duration": "1999 - 2009",
+      "description": "Converted Photoshop layouts to web pages using HTML, CSS, and JavaScript."
+    }
+  ],
+  
+  "knowledge": [
+    { "name": "Website hosting" },
+    { "name": "WordPress Development" },
+    { "name": "Hosting Installation" },
+    { "name": "SEO Optimize" },
+    { "name": "Responsive and mobile-ready" },
+    { "name": "Advertising services" },
+    { "name": "HTML, CSS, jQuery" },
+    { "name": "Search engine marketing" }
+  ],
+  "languages": [
+    { "name": "English", "level": 90 },
+    { "name": "German", "level": 60 },
+    { "name": "Italian", "level": 30 },
+    { "name": "French", "level": 70 }
   ]
+  
 }

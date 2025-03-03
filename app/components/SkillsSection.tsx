@@ -1,14 +1,10 @@
 import SkillProgress from "./SkillProgress";
 import { useState, useEffect } from "react";
+import type { Skills } from "~/types/types";
 
-interface Skill {
-  name: string;
-  icon: string;
-  percent: number;
-}
 
 export default function SkillsSection() {
-  const [skills, setSkills] = useState<Skill[] | null>(null);
+  const [skills, setSkills] = useState<Skills[] | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
