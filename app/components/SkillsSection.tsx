@@ -1,5 +1,6 @@
 import {motion} from "framer-motion"
 import data from "../../data/data.json"
+import SkillProgress from "./SkillProgress"
 export default function SkillsSection() {
 const {skills} = data
 
