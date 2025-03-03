@@ -27,17 +27,7 @@
   "AboutSection": "ABOUT ME",
   "AboutSectionTitle": "About Me",
   "description": "Hi, my self Sat Narayan Sah and Welcome! I am a highly experienced web developer with a strong track record of delivering successful live projects. With a keen eye for detail and a commitment to excellence, I specialize in creating responsive and user-friendly websites that meet client needs and exceed expectations. WordPress sites go beyond with exclusive designer.",
-  "skills": [
-    "HTML5 & CSS",
-    "Bootstrap",
-    "TailwindCSS",
-    "PHP",
-    "JavaScript",
-    "ReactJs",
-    "Angular3",
-    "Python",
-    "Django"
-  ],
+  
   "contactInfo": [
     { "label": "Phone", "value": "+977-9812039791", "link": "callto:+977-9812039791" },
     { "label": "Email", "value": "satnarayan5166@gmail.com", "link": "mailto:satnarayan5166@gmail.com" },
@@ -65,6 +55,69 @@
       "icon": "images/graphics-desining.png",
       "title": "Graphics Designing",
       "description": "I offer exceptional graphic design services, creating stunning visuals to elevate your brand and captivate your audience with professional, eye-catching designs."
+    }
+  ],
+  "skills": [
+    {
+      "name": "Adobe Photoshop",
+      "icon": "/images/adobe-photoshop-icon.svg",
+      "percent": 95
+    },
+    {
+      "name": "Figma",
+      "icon": "/images/figma.svg",
+      "percent": 90
+    },
+    {
+      "name": "Adobe Illustrator",
+      "icon": "/images/illustrator.svg",
+      "percent": 80
+    },
+    {
+      "name": "HTML5",
+      "icon": "/images/html.svg",
+      "percent": 95
+    },
+    {
+      "name": "CSS3",
+      "icon": "/images/css.svg",
+      "percent": 95
+    },
+    {
+      "name": "JavaScript",
+      "icon": "/images/js.svg",
+      "percent": 75
+    },
+    {
+      "name": "ReactJs",
+      "icon": "/images/react-logo.png",
+      "percent": 90
+    },
+    {
+      "name": "NextJs",
+      "icon": "/images/nextjs.svg",
+      "percent": 83
+    },
+    {
+      "name": "Remix",
+      "icon": "/images/remix.png",
+      "percent": 83
+    },
+    {
+      "name": "Python",
+      "icon": "/images/python.png",
+      "percent": 60
+    },
+    {
+      "name": "Tailwind",
+      "icon": "/images/tailwind.svg",
+      "percent": 90
+    },
+    
+    {
+      "name": "jQuery",
+      "icon": "/images/jquery.svg",
+      "percent": 70
     }
   ]
 }
