@@ -178,6 +178,96 @@
     { "name": "German", "level": 60 },
     { "name": "Italian", "level": 30 },
     { "name": "French", "level": 70 }
+  ],
+  "contact": {
+    "title": "Contact Me.",
+    "subtitle": "Feel free to contact me for any of your web development needs. I'm here to help bring your projects to life with high quality and timely delivery.",
+    "info": [
+      {
+        "icon": "location",
+        "title": "Location",
+        "description": "JanakpurDham, Dhanush, Nepal"
+      },
+      {
+        "icon": "email",
+        "title": "E-mail",
+        "description": "satnarayan5166@gmail.com",
+        "link": "mailto:satnarayan5166@gmail.com"
+      },
+      {
+        "icon": "phone",
+        "title": "Phone",
+        "description": "+977-9812039791",
+        "link":"callto:+977-9812039791"
+      }
+    ],
+    "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114005.90603441805!2d85.85439751567398!3d26.75444037424583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ec4005fb138bb9%3A0x533a64cf0e13c2d1!2sJanakpur!5e0!3m2!1sen!2snp!4v1722920829199!5m2!1sen!2snp"
+  },
+  "projects": [
+    {
+      "id": 1,
+      "image": "/images/digine[tronics.png",
+      "alt": "Mithila Art Classifier",
+      "title": "Mithila Art Classification Web App",
+      "githubLink": "#",
+      "livePreviewLink": "#",
+      "tags": ["#tensorflow", "#keras", "#nextjs", "#django", "#python"],
+      "buttons": [
+        {
+          "text": "Github",
+          "url": "https://github.com",
+          "icon": "/icons/github.svg"
+        },
+        {
+          "text": "View",
+          "url": "#contact",
+          "icon": "/icons/eye.svg"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "image": "/images/digine[tronics.png",
+      "alt": "Mithila Art Classifier",
+      "title": "Mithila Art Classification Web App",
+      "githubLink": "#",
+      "livePreviewLink": "#",
+      "tags": ["#tensorflow", "#keras", "#nextjs", "#django", "#python"],
+      "buttons": [
+        {
+          "text": "Github",
+          "url": "https://github.com",
+          "icon": "/icons/github.svg"
+        },
+        {
+          "text": "View",
+          "url": "#contact",
+          "icon": "/icons/eye.svg"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "image": "/images/digine[tronics.png",
+      "alt": "Mithila Art Classifier",
+      "title": "Mithila Art Classification Web App",
+      "githubLink": "#",
+      "livePreviewLink": "#",
+      "tags": ["#tensorflow", "#keras", "#nextjs", "#django", "#python"],
+      "buttons": [
+        {
+          "text": "Github",
+          "url": "https://github.com",
+          "icon": "/icons/github.svg"
+        },
+        {
+          "text": "View",
+          "url": "#contact",
+          "icon": "/icons/eye.svg"
+        }
+      ]
+    }
   ]
+  
   
 }

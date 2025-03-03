@@ -1,7 +1,9 @@
 import type { MetaFunction } from "@remix-run/node";
 
 import AboutMe from "~/components/About";
+import Contact from "~/components/Contact";
 import Profile from "~/components/Profile";
+import Projects from "~/components/Projects";
 import Resume from "~/components/Resume";
 import ServicesSection from "~/components/Service";
 import Sidebar from "~/components/Sidebar";
@@ -36,6 +38,8 @@ export default function Index() {
               <ServicesSection />
               <SkillsSection />
               <Resume/>
+              <Projects/>
+              <Contact/>
             </div>
           </div>
         </div>

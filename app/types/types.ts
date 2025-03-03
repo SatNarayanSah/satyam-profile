@@ -48,4 +48,21 @@ export interface ProfileData {
     name: string;
     level: number; // Percentage (0-100)
   }
- 
+  export interface ProjectButton {
+    text: string;
+    url: string;
+    icon: string;
+  }
+  
+
+  export interface Project {
+    id: number;
+    image: string;
+    alt: string;
+    title: string;
+    githubLink: string;
+    livePreviewLink: string;
+    tags: string[];
+    buttons: ProjectButton[];
+  }
+  
