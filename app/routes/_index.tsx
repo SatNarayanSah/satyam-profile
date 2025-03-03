@@ -26,7 +26,7 @@ export default function Index() {
 
       {/* Main Content - Scrollable */}
       <div className="w-full lg:ml-[500px] p-4 lg:top-0 mt-0 lg:p-8  flex flex-col items-center justify-center ">
-        <div className="max-h-[1200px]">
+        <div className="max-h-[550px] rounded-3xl overflow-scroll">
         <AboutMe />
         <ServicesSection/>
         </div>
