@@ -101,8 +101,8 @@ const ProfileCard = ({ profile }: ProfileCardProps) => {
                                 key={index}
                                 href={button.url}
                                 className={`flex items-center gap-2 px-6 py-4 text-center w-full relative 
-                        ${index === 1 ? " text-white bg-gray-800" : "bg-gray-800 text-white"} 
-                        hover:bg-opacity-90 transition-all duration-300`}
+                ${index === 1 ? " text-white bg-gray-800" : "bg-gray-800 text-white"} 
+                hover:bg-opacity-90 transition-all duration-300`}
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                                 style={{
@@ -110,6 +110,7 @@ const ProfileCard = ({ profile }: ProfileCardProps) => {
                                     borderWidth: "1px", // Border width
                                     borderStyle: "solid", // Border style
                                 }}
+                                download={button.text === "Download CV" ? true : undefined} // Only add download attribute to "Download CV" button
                             >
                                 {/* Gradient Border Overlay */}
                                 <div className="absolute inset-0 border-l border-r border-t border-transparent  hover:opacity-100 transition-opacity duration-300"></div>
@@ -119,6 +120,7 @@ const ProfileCard = ({ profile }: ProfileCardProps) => {
                                 <img src={button.icon} className="w-4 h-4 z-10" alt="icons" />
                             </motion.a>
                         ))}
+
                     </div>
                 </div>
             </div>
