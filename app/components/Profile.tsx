@@ -41,7 +41,8 @@ export default function Profile() {
 
     return (
         <div className="w-full px-4 lg:px-0 lg:w-96 flex items-center justify-center">
-            <ProfileCard profile={profile} />
-        </div>
+    <ProfileCard profile={profile} />
+</div>
+
     );
 }

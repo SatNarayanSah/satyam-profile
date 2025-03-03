@@ -24,7 +24,7 @@ export default function ProjectCard({ projects }: ProjectCardProps) {
         <motion.div
           key={project.id}
           whileHover={{ scale: 1.05 }}
-          className="relative w-52 rounded-2xl shadow-lg text-white bg-gray-800 overflow-hidden"
+          className="relative w-52 sm:w-full md:w-64 rounded-2xl shadow-lg text-white bg-gray-800 overflow-hidden"
         >
           {/* Image Section */}
           <div className="relative overflow-hidden rounded-t-xl">

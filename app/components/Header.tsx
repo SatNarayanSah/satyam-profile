@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link } from "@remix-run/react";
 import { motion } from "framer-motion";
 
-
 const menuItems = [
   { id: "1", href: "#home", icon: "/icons/user.svg", name: "About" },
   { id: "2", href: "#resume", icon: "/icons/resume.svg", name: "Resume" },
@@ -44,24 +43,31 @@ export default function Header() {
 
   return (
     <motion.header
-      className="fixed w-full top-0 left-0 z-50 bg-gray-900 bg-opacity-20  text-white shadow-lg"
+      className="fixed w-full  top-0 left-0 z-50 bg-gray-900 bg-opacity-50 text-white shadow-lg"
       variants={headerVariants}
       initial="hidden"
       animate="visible"
     >
-      <div className="container mx-auto p-4 flex justify-between items-center">
+      <div className="container mx-auto p-2 flex justify-between items-center">
         {/* Logo or Brand Name */}
-        <div className="text-xl font-bold">MySite</div>
+        <div>
+          <img src="/images/t-logo.png" className="w-16" alt="logo" />
+        </div>
 
         {/* Hamburger Icon (only visible on mobile) */}
         <div
-          className="lg:hidden text-lg"
+          className="lg:hidden text-lg z-30"
           onClick={toggleMenu}
-          onKeyPress={handleKeyPress} // Add keyboard event listener
+          onKeyDown={handleKeyPress} // Updated to onKeyDown
           tabIndex={0} // Make it focusable so it can receive keyboard events
           role="button" // Make it semantically a button for accessibility
+          aria-label="Toggle Menu" // Added aria-label for accessibility
         >
-          {isOpen ? ( <div> X </div> ) : ( <img src="/image/toggle.svg" alt="close" /> )}
+          {isOpen ? (
+            <img src="/icons/toggle-close.svg" className="w-10 h-10 z-30" alt="close" />
+          ) : (
+            <img src="/icons/toggle.svg" className="w-10 h-10" alt="hamburger" />
+          )}
         </div>
 
         {/* Desktop Menu */}
@@ -86,7 +92,7 @@ export default function Header() {
       {/* Mobile Menu (shown when isOpen is true) */}
       {isOpen && (
         <motion.div
-          className="lg:hidden bg-gray-800 text-white w-full absolute top-0 left-0 py-4"
+          className="lg:hidden z-0 bg-gray-900 text-white w-full absolute top-0 left-0 py-4"
           variants={headerVariants}
           initial="hidden"
           animate="visible"
@@ -101,7 +107,7 @@ export default function Header() {
                 animate="visible"
                 transition={{ delay: index * 0.1 }}
               >
-                <Link to={item.href} className="py-2 px-4 text-lg w-full text-center">
+                <Link to={item.href} className="py-2 px-4 text-lg w-full flex items-center gap-2 bg-opacity-35 text-center">
                   <img src={item.icon} className="w-6 h-6 mx-auto" alt={item.name} />
                   <span>{item.name}</span>
                 </Link>
