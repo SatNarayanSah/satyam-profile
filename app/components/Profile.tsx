@@ -1,48 +1,23 @@
-import { useState, useEffect } from "react";
-import type { ProfileData } from "~/types/types";
 import ProfileCard from "./ProfileCard";
+import data from "../../data/data.json";
 
 export default function Profile() {
-    const [profile, setProfile] = useState<ProfileData | null>(null);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState<string | null>(null);
+    const { name, nickname, avatar, bannerImages, title, socialLinks, buttons } = data;
 
-    useEffect(() => {
-        // Fetch data asynchronously
-        const fetchData = async () => {
-            try {
-                const response = await fetch("/data/data.json"); // Adjust the path if needed
-                if (!response.ok) {
-                    throw new Error("Failed to fetch data");
-                }
-                const data = (await response.json()) as ProfileData;
-                setProfile(data);
-            } catch (err) {
-                setError(err instanceof Error ? err.message : "An unknown error occurred");
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        fetchData();
-    }, []);
-
-    if (loading) {
-        return <div className="text-white text-center">Loading...</div>;
-    }
-
-    if (error) {
-        return <div className="text-white text-center">Error: {error}</div>;
-    }
-
-    if (!profile) {
-        return <div className="text-white text-center">No profile data available.</div>;
-    }
+    // Create a profile object to pass to the ProfileCard component
+    const profile = {
+        name,
+        nickname,
+        avatar,
+        bannerImages,
+        title,
+        socialLinks,
+        buttons
+    };
 
     return (
         <div className="w-full px-4 lg:px-0 lg:w-96 flex items-center justify-center">
-    <ProfileCard profile={profile} />
-</div>
-
+            <ProfileCard profile={profile} />
+        </div>
     );
 }
