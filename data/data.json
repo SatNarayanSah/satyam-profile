@@ -1,5 +1,6 @@
 {
   "name": "Sat Narayan Sah",
+  "nickname" : "Satyam sah",
   "avatar": "/images/satyam.jpg",
   "bannerImages": "/images/banner1.jpg",
   
@@ -26,7 +27,7 @@
   ],
   "AboutSection": "ABOUT ME",
   "AboutSectionTitle": "About Me",
-  "description": "Hi, my self Sat Narayan Sah and Welcome! I am a highly experienced web developer with a strong track record of delivering successful live projects. With a keen eye for detail and a commitment to excellence, I specialize in creating responsive and user-friendly websites that meet client needs and exceed expectations. WordPress sites go beyond with exclusive designer.",
+  "description": "Hi, my self Sat Narayan Sah (Satyam Sah) and Welcome! I am a highly experienced web developer with a strong track record of delivering successful live projects. With a keen eye for detail and a commitment to excellence, I specialize in creating responsive and user-friendly websites that meet client needs and exceed expectations. WordPress sites go beyond with exclusive designer.",
   
   "contactInfo": [
     { "label": "Phone", "value": "+977-9812039791", "link": "callto:+977-9812039791" },

@@ -1,5 +1,6 @@
 export interface ProfileData {
     name: string;
+    nickname: string;
     avatar: string;
     bannerImages: string;
     title: string;

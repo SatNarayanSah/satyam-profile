@@ -60,6 +60,7 @@ const ProfileCard = ({ profile }: ProfileCardProps) => {
                         transition={{ delay: 0.5 }}
                     >
                         {profile.name}
+                        <p className="text-xl font-bold underline underline-offset-8 text-orange-300"> ({profile.nickname})</p>
                     </motion.h1>
 
                     {/* Title (Typing Animation) */}

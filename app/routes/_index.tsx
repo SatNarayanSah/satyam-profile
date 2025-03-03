@@ -15,25 +15,29 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <div className="flex min-h-screen w-full flex-col lg:flex-row">
-      {/* Sidebar - Fixed on all screens */}
-      <div className="w-full lg:w-[200px] lg:h-screen lg:fixed lg:left-0 lg:top-0  shadow-md flex items-center justify-center">
-        <Sidebar />
-      </div>
+    <>
+      <div className="container mx-auto">
+        <div className="flex  min-h-screen w-full flex-col lg:flex-row">
+          {/* Sidebar - Fixed on all screens */}
+          <div className="w-full lg:w-[200px] lg:h-screen  lg:left-0 lg:top-0  shadow-md flex items-center justify-center">
+            <Sidebar />
+          </div>
 
-      {/* Profile - Fixed on all screens */}
-      <div className="w-full lg:w-[350px] lg:h-screen lg:fixed lg:left-[150px] lg:top-0  shadow-md flex items-center justify-center mt-4 lg:mt-0">
-        <Profile />
-      </div>
+          {/* Profile - Fixed on all screens */}
+          <div className="w-full lg:w-[350px] lg:h-screen  lg:left-[150px] lg:top-0  shadow-md flex items-center justify-center mt-4 lg:mt-0">
+            <Profile />
+          </div>
 
-      {/* Main Content - Scrollable */}
-      <div className="w-full lg:ml-[500px] p-4 lg:top-0 mt-0 lg:p-8  flex flex-col items-center justify-center ">
-        <div className="max-h-[550px] rounded-3xl overflow-scroll">
-        <AboutMe />
-        <ServicesSection/>
-        <SkillsSection/>
+          {/* Main Content - Scrollable */}
+          <div className="w-full  p-4 lg:top-0 mt-0 lg:p-8  flex flex-col items-center justify-center ">
+            <div className="max-h-[550px] w-full rounded-3xl overflow-scroll">
+              <AboutMe />
+              <ServicesSection />
+              <SkillsSection />
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
