@@ -19,7 +19,7 @@ const tagColors = [
 
 export default function ProjectCard({ projects }: ProjectCardProps) {
   return (
-    <div className="flex flex-wrap justify-between gap-4">
+    <div className="flex flex-wrap justify-center gap-16">
       {projects.map((project) => (
         <motion.div
           key={project.id}
