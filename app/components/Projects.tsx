@@ -1,38 +1,11 @@
-import { useEffect, useState } from "react";
-import type { Project } from "~/types/types";
 import ProjectCard from "./ProjectCard";
+import data from "../../data/data.json"
 
 const Projects = () => {
-  const [projects, setProjects] = useState<Project[] | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null); // Fix error type
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch("/data/data.json");
-        if (!response.ok) {
-          throw new Error("Failed to fetch data");
-        }
-        const data = await response.json();
-        setProjects(data.projects);
-      } catch (err) {
-        setError(err instanceof Error ? err.message : "An unknown error occurred"); // Fix error handling
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
+  const { projects } = data;
+  const projects = {
+    projects
+  };
 
   return (
     <>
@@ -47,12 +20,12 @@ const Projects = () => {
               My <span className="font-semibold text-orange-300">Projects</span>
             </h2>
             <p className=" text-justify mt-4 md:mt-6 text-gray-300">
-            Over the course of my career, I have successfully developed more than 4 websites, each tailored to meet the specific needs and goals of my clients. These projects have enabled me to hone my skills in web development and deliver high-quality, responsive, and user-friendly websites
+              Over the course of my career, I have successfully developed more than 4 websites, each tailored to meet the specific needs and goals of my clients. These projects have enabled me to hone my skills in web development and deliver high-quality, responsive, and user-friendly websites
             </p>
           </div>
           {/* Pass projects data to ProjectCard */}
           <div className="">
-          {projects && <ProjectCard projects={projects} />}
+            {projects && <ProjectCard projects={projects} />}
           </div>
         </div>
       </div>
