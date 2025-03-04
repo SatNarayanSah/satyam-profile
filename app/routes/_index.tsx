@@ -11,7 +11,7 @@ import SkillsSection from "~/components/SkillsSection";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "Sat Narayan Sah" },
+    { title: "Sat Narayan Sah - MERN Stack Developer - Freelancer" },
     { name: "description", content: "MERN Stack Developer" },
   ];
 };
