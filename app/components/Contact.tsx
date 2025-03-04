@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import data from "../../data/data.json"
 
 interface ContactData {
     title: string;
@@ -14,40 +14,7 @@ interface ContactData {
 }
 
 export default function Contact() {
-    const [data, setData] = useState<ContactData | null>(null);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState<string | null>(null);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await fetch("/data/data.json");
-                if (!response.ok) {
-                    throw new Error("Failed to fetch data");
-                }
-                const jsonData = await response.json();
-                setData(jsonData.contact);
-            } catch (err) {
-                setError(err instanceof Error ? err.message : "An unknown error occurred");
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        fetchData();
-    }, []);
-
-    if (loading) {
-        return <div className="text-center text-white">Loading...</div>;
-    }
-
-    if (error) {
-        return <div className="text-center text-white">Error: {error}</div>;
-    }
-
-    if (!data) {
-        return <div className="text-center text-white">No data available.</div>;
-    }
+  const {contact } = data
 
     return (
         <div id="contact" className="min-h-screen bg-gray-900 rounded-xl mt-5 py-12">
@@ -60,10 +27,10 @@ export default function Contact() {
                     className="text-center mb-12"
                 >
                     <h2 className="text-[32px] md:text-4xl lg:text-5xl font-extralight text-black dark:text-white">
-                        {data.title}
+                        {contact.title}
                     </h2>
                     <p className="mt-3.5 md:mt-5 max-w-sectionTitle text-black dark:text-white">
-                        {data.subtitle}
+                        {contact.subtitle}
                     </p>
                 </motion.div>
 
@@ -72,7 +39,7 @@ export default function Contact() {
                     {/* Contact Info */}
                     <div className="md:col-span-5">
                         <ul className="space-y-6 md:space-y-10">
-                            {data.info.map((item, index) => (
+                            {contact.info.map((item:ContactData["info"][0], index:number) => (
                                 <motion.li
                                     key={index}
                                     initial={{ opacity: 0, x: -50 }}
@@ -170,7 +137,7 @@ export default function Contact() {
                     className="mt-12"
                 >
                     <iframe
-                        src={data.map}
+                        src={contact.map}
                         title="Google Map Location" // Add a descriptive title here
                         className="w-full h-80 2xl:h-96 rounded-2xl border-10 border-platinum dark:border-greyBlack"
                         allowFullScreen
