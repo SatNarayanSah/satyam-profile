@@ -1,11 +1,8 @@
 import ProjectCard from "./ProjectCard";
 import data from "../../data/data.json"
 
-const Projects = () => {
+const Projects:React.FC = () => {
   const { projects } = data;
-  const projects = {
-    projects
-  };
 
   return (
     <>
