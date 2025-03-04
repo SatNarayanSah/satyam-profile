@@ -59,7 +59,7 @@ export default function ProjectCard({ projects }: ProjectCardProps) {
                 key={index}
                 target="_blank"
                 href={button.url}
-                className={`flex items-center gap-2 px-6 py-4 text-center w-full transition-all duration-300
+                className={`flex items-center justify-center gap-2 px-6 py-4 text-center w-full transition-all duration-300
                   ${index === 1 ? "text-white bg-gray-800" : "bg-gray-800 text-white"} 
                   hover:bg-opacity-90`}
                 whileHover={{ scale: 1.05 }}
@@ -70,8 +70,8 @@ export default function ProjectCard({ projects }: ProjectCardProps) {
                   borderStyle: "solid",
                 }}
               >
-                <span className="text-sm z-10">{button.text}</span>
                 <img src={button.icon} className="w-4 h-4 z-10" alt="icon" />
+                <span className="text-sm  z-10">{button.text}</span>
               </motion.a>
             ))}
           </div>
