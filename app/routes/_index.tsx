@@ -12,7 +12,7 @@ import SkillsSection from "~/components/SkillsSection";
 export const meta: MetaFunction = () => {
   return [
     { title: "Sat Narayan Sah - MERN Stack Developer - Freelancer" },
-    { name: "description", content: "MERN Stack Developer" },
+    { name: "description", content: "I’m Sat Narayan Sah, a MERN stack developer passionate about building scalable and dynamic web applications. I specialize in MongoDB, Express.js, React.js,  Nextjs, Remix and Node.js, creating high-performance solutions with clean code and modern web technologies. My focus is on delivering seamless user experiences and robust backend functionality." },
   ];
 };
 
