@@ -28,13 +28,13 @@ export default function Index() {
           </div> */}
 
           {/* Profile - Fixed on all screens */}
-          <div className="w-full lg:w-[350px] lg:h-screen  lg:left-[150px] lg:top-0  shadow-md flex items-center justify-center  lg:pt-12">
+          <div className="w-full lg:w-[350px] lg:h-[90vh] mt-12 lg:left-[150px] lg:top-0  shadow-md flex items-center justify-center  lg:pt-12">
             <Profile />
           </div>
 
           {/* Main Content - Scrollable */}
           <div className="w-full  p-4 lg:top-0 mt-0 lg:pt-16  flex flex-col items-center justify-center ">
-            <div className="max-h-[590px] w-full rounded-3xl overflow-scroll">
+          <div className="max-h-[590px] w-full rounded-3xl overflow-x-auto [&::-webkit-scrollbar]:hidden">
               <AboutMe />
               <ServicesSection />
               <SkillsSection />
