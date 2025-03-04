@@ -256,6 +256,45 @@
     },
     {
       "id": 3,
+      "image": "/images/foodmandu_clone.png",
+      "alt": "images",
+      "title": "Foodmandu Clone",
+      "tags": ["#reactJs", "#TailwindCSs", "#OpenAPI", "#JS", "#Node"],
+      "buttons": [
+        {
+          "text": "Github",
+          "url": "https://github.com/SatNarayanSah/foodmanduclones",
+          "icon": "/icons/github.svg"
+        },
+        {
+          "text": "View",
+          "url": "https://satnarayansah-foodmanduclone.vercel.app/",
+          "icon": "/icons/eye.svg"
+        }
+      ]
+    },
+   
+    {
+      "id": 4,
+      "image": "/images/theweddyfilmer.png",
+      "alt": "images",
+      "title": "Wedding videoShoot website",
+      "tags": ["#Nextjs", "#TailwindCSs", "Django", "#JS", "#Nodejs", "#Python"],
+      "buttons": [
+        {
+          "text": "Github",
+          "url": "https://github.com/SatNarayanSah/theweddyfilmer",
+          "icon": "/icons/github.svg"
+        },
+        {
+          "text": "View",
+          "url": "https://theweddyfilmer-dc81.vercel.app/",
+          "icon": "/icons/eye.svg"
+        }
+      ]
+    },
+    {
+      "id": 5,
       "image": "/images/advice.png",
       "alt": "images",
       "title": "Advice Generator Website",
@@ -274,26 +313,7 @@
       ]
     },
     {
-      "id": 4,
-      "image": "/images/foodmandu_clone.png",
-      "alt": "images",
-      "title": "Foodmandu Clone",
-      "tags": ["#reactJs", "#TailwindCSs", "#OpenAPI", "#JS", "#Node"],
-      "buttons": [
-        {
-          "text": "Github",
-          "url": "https://github.com/SatNarayanSah/foodmanduclones",
-          "icon": "/icons/github.svg"
-        },
-        {
-          "text": "View",
-          "url": "https://satnarayansah-foodmanduclone.vercel.app/",
-          "icon": "/icons/eye.svg"
-        }
-      ]
-    },
-    {
-      "id": 5,
+      "id": 6,
       "image": "/images/countries.png",
       "alt": "images",
       "title": "Countries Details Website",
@@ -312,7 +332,7 @@
       ]
     },
     {
-      "id": 6,
+      "id": 7,
       "image": "/images/devfinder.png",
       "alt": "images",
       "title": "Devloper github profile finder",
@@ -329,26 +349,8 @@
           "icon": "/icons/eye.svg"
         }
       ]
-    },
-    {
-      "id": 7,
-      "image": "/images/theweddyfilmer.png",
-      "alt": "images",
-      "title": "Wedding videoShoot website",
-      "tags": ["#Nextjs", "#TailwindCSs", "Django", "#JS", "#Nodejs", "#Python"],
-      "buttons": [
-        {
-          "text": "Github",
-          "url": "https://github.com/SatNarayanSah/theweddyfilmer",
-          "icon": "/icons/github.svg"
-        },
-        {
-          "text": "View",
-          "url": "https://theweddyfilmer-dc81.vercel.app/",
-          "icon": "/icons/eye.svg"
-        }
-      ]
     }
+    
   ]
   
   
