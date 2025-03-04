@@ -47,10 +47,10 @@ export default function Resume() {
                   {/* Content */}
                   <div className="border-b border-dashed border-orange-300 py-5">
                     <h3 className="text-xl font-semibold text-gray-300">{exp.title}</h3>
-                    <p className="text-gray-500">
+                    <p className="text-orange-300">
                       {exp.company} | <span>{exp.duration}</span>
                     </p>
-                    <p className="text-gray-700 mt-2">{exp.description}</p>
+                    <p className="text-gray-400 mt-2">{exp.description}</p>
                   </div>
                 </div>
               ))}
@@ -85,7 +85,7 @@ export default function Resume() {
                     <p className="text-orange-300 flex flex-col ">
                       {edu.Field}   <span className="text-gray-400">{edu.duration}</span>
                     </p>
-                    <p className="text-gray-700 mt-2">{edu.description}</p>
+                    <p className="text-gray-400 mt-2">{edu.description}</p>
                   </div>
                 </div>
               ))}

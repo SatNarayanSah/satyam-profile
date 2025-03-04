@@ -19,7 +19,7 @@
   ],
   "buttons": [
     {
-      "text": "Download CV",
+      "text": "Resume",
       "url": "https://drive.google.com/uc?export=download&id=1kZD9lMODRZslCcr1ZX6JPJyvmBXEHtsw",
       "icon": "/icons/dowload.svg"
     },

@@ -11,7 +11,7 @@ export default function ProgressCircle({
   percent,
   circleFill = "#00BC91",
   circleEmpty = "#777777",
-  size = "w-10 h-10 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24", // Responsive size
+  size = "w-16 h-16 sm:w-20 sm:h-20 md:w-20 md:h-20 lg:w-24 lg:h-24", // Responsive size
 }: ProgressCircleProps) {
   const circleRef = useRef<SVGCircleElement>(null); // Correct type for SVG circle
 
@@ -53,7 +53,7 @@ export default function ProgressCircle({
         />
       </svg>
       {/* Percentage Text */}
-      <div className="absolute inset-0 flex items-center justify-center text-lg sm:text-xl md:text-2xl font-semibold text-black dark:text-white">
+      <div className="absolute inset-0 flex items-center justify-center text-lg sm:text-[0.5rem] md:text-xl font-semibold text-black dark:text-white">
         {percent}%
       </div>
     </div>
