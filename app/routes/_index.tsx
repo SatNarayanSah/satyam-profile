@@ -1,8 +1,9 @@
 import type { MetaFunction } from "@remix-run/node";
 
 import AboutMe from "~/components/About";
-import Contact from "~/components/Contact";
+import Contact from "~/routes/Contact";
 import Header from "~/components/Header";
+// import ParticlesBackground from "~/components/ParticlesBackground";
 import Profile from "~/components/Profile";
 import Projects from "~/components/Projects";
 import Resume from "~/components/Resume";
@@ -19,6 +20,7 @@ export const meta: MetaFunction = () => {
 export default function Index() {
   return (
     <>
+    {/* <ParticlesBackground/> */}
       <div className="container mx-auto pl-4  ">
         <Header/>
         <div className="flex justify-between  min-h-screen w-full flex-col lg:flex-row">
@@ -34,7 +36,7 @@ export default function Index() {
 
           {/* Main Content - Scrollable */}
           <div className="w-full  p-4 lg:top-0 mt-0 lg:pt-16  flex flex-col items-center justify-center ">
-          <div className="max-h-[590px] w-full rounded-3xl overflow-x-auto [&::-webkit-scrollbar]:hidden">
+          <div className="max-h-[80vh] w-full rounded-3xl overflow-x-auto [&::-webkit-scrollbar]:hidden">
               <AboutMe />
               <ServicesSection />
               <SkillsSection />
