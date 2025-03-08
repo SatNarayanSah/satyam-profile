@@ -74,17 +74,17 @@
     {
       "name": "Adobe Photoshop",
       "icon": "/images/adobe-photoshop-icon.svg",
-      "percent": 95
+      "percent": 40
     },
     {
       "name": "Figma",
       "icon": "/images/figma.svg",
-      "percent": 90
+      "percent": 75
     },
     {
       "name": "Adobe Illustrator",
       "icon": "/images/illustrator.svg",
-      "percent": 80
+      "percent": 30
     },
     {
       "name": "HTML5",
@@ -94,7 +94,7 @@
     {
       "name": "CSS3",
       "icon": "/images/css.svg",
-      "percent": 95
+      "percent": 70
     },
     {
       "name": "JavaScript",
@@ -114,7 +114,7 @@
     {
       "name": "Remix",
       "icon": "/images/remix.png",
-      "percent": 83
+      "percent": 60
     },
     {
       "name": "Python",
