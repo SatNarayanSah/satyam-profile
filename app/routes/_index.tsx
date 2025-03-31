@@ -46,6 +46,7 @@ export default function Index() {
             </div>
           </div>
         </div>
+        <div className="text-center text-white text-sm font-bold">All Copy Right to ©️ satnarayan.com.np - {new Date().getFullYear()} </div>
       </div>
     </>
   );
