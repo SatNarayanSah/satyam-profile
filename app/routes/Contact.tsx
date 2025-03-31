@@ -47,7 +47,7 @@ export default function Contact() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-[32px] md:text-4xl lg:text-5xl font-extralight text-black dark:text-white">
+          <h2 className="text-[32px] md:text-4xl lg:text-5xl font-extralight text-white dark:text-white">
             {contact.title}
           </h2>
           <p className="mt-3.5 md:mt-5 max-w-sectionTitle text-black dark:text-white">
