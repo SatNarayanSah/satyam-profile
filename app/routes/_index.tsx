@@ -20,9 +20,9 @@ export const meta: MetaFunction = () => {
 export default function Index() {
   return (
     <>
-    {/* <ParticlesBackground/> */}
-      <div className="container mx-auto pl-4  ">
-        <Header/>
+      {/* <ParticlesBackground/> */}
+      <div className="lg:container mx-auto lg:pl-4   ">
+        <Header />
         <div className="flex justify-between  min-h-screen w-full flex-col lg:flex-row">
           {/* Sidebar - Fixed on all screens */}
           {/* <div className="w-full lg:w-[200px] lg:h-screen  lg:left-0 lg:top-0  shadow-md flex items-center justify-center">
@@ -30,19 +30,19 @@ export default function Index() {
           </div> */}
 
           {/* Profile - Fixed on all screens */}
-          <div className="w-full lg:w-[350px] lg:h-[90vh] mt-12 lg:left-[150px] lg:top-0  shadow-md flex items-center justify-center  lg:pt-12">
+          <div className="w-full lg:w-[350px] lg:h-[90vh] mt-16 lg:left-[150px] lg:top-0  shadow-md flex items-center justify-center  lg:pt-1">
             <Profile />
           </div>
 
           {/* Main Content - Scrollable */}
-          <div className="w-full  p-4 lg:top-0 mt-0 lg:pt-16  flex flex-col items-center justify-center ">
-          <div className="max-h-[80vh] w-full rounded-3xl overflow-x-auto [&::-webkit-scrollbar]:hidden">
+          <div className="w-full  p-4 lg:top-0 mt-0 lg:pt-14  flex flex-col items-center justify-center ">
+            <div className="max-h-[85vh] w-full rounded-3xl overflow-x-auto [&::-webkit-scrollbar]:hidden">
               <AboutMe />
               <ServicesSection />
               <SkillsSection />
-              <Resume/>
-              <Projects/>
-              <Contact/>
+              <Resume />
+              <Projects />
+              <Contact />
             </div>
           </div>
         </div>
