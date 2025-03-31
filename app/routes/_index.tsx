@@ -12,7 +12,7 @@ import SkillsSection from "~/components/SkillsSection";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "Sat Narayan Sah - MERN Stack Developer - Freelancer" },
+    { title: "Sat Narayan Sah (Satyam Sah) - MERN Stack Developer - Freelancer" },
     { name: "description", content: "I'm Sat Narayan Sah, a MERN stack developer crafting scalable web apps with MongoDB, Express.js, React.js, Next.js, Remix & Node.js for top performance." },
   ];
 };
