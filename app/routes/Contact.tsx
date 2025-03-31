@@ -50,7 +50,7 @@ export default function Contact() {
           <h2 className="text-[32px] md:text-4xl lg:text-5xl font-extralight text-white dark:text-white">
             {contact.title}
           </h2>
-          <p className="mt-3.5 md:mt-5 max-w-sectionTitle text-black dark:text-white">
+          <p className="mt-3.5 md:mt-5 max-w-sectionTitle text-white dark:text-white">
             {contact.subtitle}
           </p>
         </motion.div>
