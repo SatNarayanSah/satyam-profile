@@ -94,7 +94,7 @@ const AboutMe = () => {
                                 <div className="mb-1 text-2xl font-semibold md:text-3xl number text-theme 2xl:text-4xl">
                                     <span className="text-orange-300">{counter.number}</span>
                                 </div>
-                                <div className="text-sm">{counter.label}</div>
+                                <div className="text-sm text-white">{counter.label}</div>
                             </motion.li>
                         ))}
                     </ul>
