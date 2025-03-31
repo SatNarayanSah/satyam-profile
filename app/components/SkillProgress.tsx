@@ -53,7 +53,7 @@ export default function ProgressCircle({
         />
       </svg>
       {/* Percentage Text */}
-      <div className="absolute inset-0 flex items-center justify-center text-lg sm:text-[0.5rem] md:text-xl font-semibold text-black dark:text-white">
+      <div className="absolute inset-0 flex items-center justify-center text-lg sm:text-[0.5rem] md:text-xl font-semibold text-white dark:text-white">
         {percent}%
       </div>
     </div>

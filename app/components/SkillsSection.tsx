@@ -78,7 +78,7 @@ const {skills} = data
               <SkillProgress percent={skill.percent} />
             </motion.div>
             <motion.div
-              className="text-md md:text-sm font-semibold tracking-widest text-center"
+              className="text-md md:text-sm text-white font-semibold tracking-widest text-center"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.3 }}
