@@ -43,7 +43,7 @@ export default function Index() {
               <Resume />
               <Projects />
               <Contact />
-        <div className="text-center text-white text-sm font-bold">All Copy Right to ©️ satnarayan.com.np - {new Date().getFullYear()} </div>
+        <div className="text-center text-black text-sm font-bold">All Copy Right to ©️ satnarayan.com.np - {new Date().getFullYear()} </div>
             </div>
           </div>
         </div>
