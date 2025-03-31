@@ -30,11 +30,11 @@ const AboutMe = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
                 >
-                    <h2 className="title text-2xl md:text-4xl lg:text-5xl font-extralight text-black dark:text-white leading-tight">
+                    <h2 className="title text-2xl md:text-4xl lg:text-5xl font-extralight text-white dark:text-white leading-tight">
                         {AboutSectionTitle.split(" ")[0]}{" "}
                         <span className="font-semibold text-orange-300">{AboutSectionTitle.split(" ")[1]}</span>
                     </h2>
-                    <p className=" mt-3 md:mt-6 text-justify">
+                    <p className=" mt-3 md:mt-6 text-white text-justify">
                         {description}
                     </p>
                 </motion.div>
@@ -51,7 +51,7 @@ const AboutMe = () => {
                             <motion.a
                                 key={index}
                                 href="#"
-                                className="hover:text-theme border px-4 py-2 border-dashed rounded-full border-orange-300"
+                                className="hover:text-theme border px-4 py-2 border-dashed rounded-full text-white border-orange-300"
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                             >
@@ -61,7 +61,7 @@ const AboutMe = () => {
                     </div>
 
                     {/* Contact Info */}
-                    <ul className="grid mt-4 mb-8 text-sm lg:mt-6 md:grid-cols-2 gap-x-4 lg:gap-x-8 gap-y-3">
+                    <ul className="grid mt-4 mb-8 text-sm lg:mt-6 md:grid-cols-2 gap-x-4 text-white lg:gap-x-8 gap-y-3">
                         {contactInfo.map((info, index) => (
                             <motion.li
                                 key={index}
@@ -76,7 +76,7 @@ const AboutMe = () => {
                                         <span className="text-white ">{info.value}</span>
                                     </a>
                                 ) : (
-                                    <span className="text-black dark:text-white">{info.value}</span>
+                                    <span className="text-white dark:text-white">{info.value}</span>
                                 )}
                             </motion.li>
                         ))}
