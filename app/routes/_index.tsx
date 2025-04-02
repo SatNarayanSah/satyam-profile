@@ -21,7 +21,7 @@ export default function Index() {
   return (
     <>
       {/* <ParticlesBackground/> */}
-      <div className="lg:container mx-auto lg:pl-4   ">
+      <div className="lg:container bg-gray-950 mx-auto lg:pl-4   ">
         <Header />
         <div className="flex justify-between  min-h-screen w-full flex-col lg:flex-row">
           {/* Sidebar - Fixed on all screens */}
