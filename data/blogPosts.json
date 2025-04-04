@@ -1,0 +1,29 @@
+[
+    {
+      "id": "1",
+      "title": "Noteworthy Technology Acquisitions 2023",
+      "description": "Here are the biggest enterprise technology acquisitions of 2023 so far, in reverse chronological order.",
+      "imageUrl": "/images/blog/image-1.jpg",
+      "date": "2023-05-15",
+      "readTime": "5 min read",
+      "category": "Technology"
+    },
+    {
+      "id": "2",
+      "title": "The Future of Web Development",
+      "description": "Exploring the latest trends and innovations shaping the future of web development.",
+      "imageUrl": "/images/blog/image-2.jpg",
+      "date": "2023-06-20",
+      "readTime": "8 min read",
+      "category": "Web Development"
+    },
+    {
+      "id": "3",
+      "title": "Artificial Intelligence Breakthroughs",
+      "description": "Recent advancements in AI that are transforming industries worldwide.",
+      "imageUrl": "/images/blog/image-3.jpg",
+      "date": "2023-07-10",
+      "readTime": "6 min read",
+      "category": "AI"
+    }
+  ]

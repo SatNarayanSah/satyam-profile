@@ -66,3 +66,12 @@ export interface ProfileData {
     buttons: ProjectButton[];
   }
   
+  export interface BlogPost {
+    id: string;
+    title: string;
+    description: string;
+    imageUrl: string;
+    date: string;
+    readTime: string;
+    category: string;
+  }

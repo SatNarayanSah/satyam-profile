@@ -5,6 +5,7 @@ import Resume from "../components/Resume";
 import ServicesSection from "../components/Service";
 import SkillsSection from "../components/SkillsSection";
 import Contact from "./Contact";
+import Blog from "~/components/blog/Blog";
 
 export const meta: MetaFunction = () => {
   return [
@@ -25,6 +26,7 @@ export default function Index() {
           <SkillsSection />
           <Resume />
           <Projects />
+          <Blog/>
           <Contact />
           <div className="text-center text-white rounded-xl mt-2  bg-gray-900 p-4 text-sm font-bold">All Copy Right to ©️ satnarayan.com.np - {new Date().getFullYear()} </div>
         </div>
