@@ -1,0 +1,37 @@
+import { Outlet } from "@remix-run/react"
+import Header from "../components/Header"
+import Profile from "../components/Profile"
+
+const _layout = () => {
+  return (
+    <div>
+        <>
+      {/* <ParticlesBackground/> */}
+      <div className="lg:container bg-gray-950 mx-auto lg:pl-4   ">
+        <Header />
+        <div className="flex justify-between  min-h-screen w-full flex-col lg:flex-row">
+          {/* Sidebar - Fixed on all screens */}
+          {/* <div className="w-full lg:w-[200px] lg:h-screen  lg:left-0 lg:top-0  shadow-md flex items-center justify-center">
+            <Sidebar />
+          </div> */}
+
+          {/* Profile - Fixed on all screens */}
+          <div className="w-full lg:w-[350px] lg:h-[90vh] mt-16 lg:left-[150px] lg:top-0  shadow-md flex items-center justify-center  lg:pt-1">
+            <Profile />
+          </div>
+
+          {/* Main Content - Scrollable */}
+          <div className="w-full  p-4 lg:top-0 mt-0 lg:pt-14  flex flex-col items-center justify-center ">
+            <div className="max-h-[85vh] w-full rounded-3xl overflow-x-auto [&::-webkit-scrollbar]:hidden">
+              <Outlet/>
+        <div className="text-center text-white rounded-xl mt-2  bg-gray-900 p-4 text-sm font-bold">All Copy Right to ©️ satnarayan.com.np - {new Date().getFullYear()} </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+    </div>
+  )
+}
+
+export default _layout
