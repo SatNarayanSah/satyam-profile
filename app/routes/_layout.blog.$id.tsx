@@ -1,4 +1,4 @@
-import { LoaderFunctionArgs } from "@remix-run/node";
+import { LoaderFunctionArgs, MetaFunction } from "@remix-run/node";
 import { Link, useLoaderData } from "@remix-run/react";
 import { blogPosts } from "../components/blog/blogPosts";
 import type { BlogPost } from "../types/types";
@@ -18,6 +18,22 @@ export async function loader({ params }: LoaderFunctionArgs) {
   });
 }
 
+export const meta: MetaFunction<typeof loader> = ({ data }) => {
+    if (!data?.post) {
+      return [
+        { title: "Blog Post Not Found" },
+        { name: "description", content: "The requested blog post could not be found." },
+      ];
+    }
+  
+    return [
+      { title: data.post.title },
+      { name: "description", content: data.post.description },
+      { name: "og:title", content: data.post.title },
+      { name: "og:description", content: data.post.description },
+      { name: "og:image", content: data.post.imageUrl },
+    ];
+  };
 export default function BlogDetailsPage() {
   const { post } = useLoaderData<{ post: BlogPost }>();
 
