@@ -18,7 +18,7 @@ export const blogPosts: BlogPosts = {
                 },
                 {
                     "heading": "2. Learn HTML, CSS, and JavaScript",
-                    "text": "These are the foundational languages for web development:\n- **HTML (HyperText Markup Language):** The structure of a webpage.\n- **CSS (Cascading Style Sheets):** Styles and layouts for web pages.\n- **JavaScript:** Adds interactivity and functionality."
+                    "text": "These are the foundational languages for web development:\n- HTML (HyperText Markup Language): The structure of a webpage.\n- CSS (Cascading Style Sheets): Styles and layouts for web pages.\n- JavaScript: Adds interactivity and functionality."
                 },
                 {
                     "heading": "3. Explore Frontend Frameworks",
@@ -26,7 +26,7 @@ export const blogPosts: BlogPosts = {
                 },
                 {
                     "heading": "4. Learn Backend Development",
-                    "text": "Backend development involves handling databases, authentication, and server logic. Popular backend languages and frameworks include:\n- **Node.js with Express.js** (JavaScript)\n- **Django or Flask** (Python)\n- **Ruby on Rails** (Ruby)\n- **PHP with Laravel**"
+                    "text": "Backend development involves handling databases, authentication, and server logic. Popular backend languages and frameworks include:\n- Node.js with Express.js (JavaScript)\n- Django or Flask (Python)\n- Ruby on Rails (Ruby)\n- PHP with Laravel"
                 },
                 {
                     "heading": "5. Work with Databases",
@@ -50,10 +50,10 @@ export const blogPosts: BlogPosts = {
                 },
                 {
                     "heading": "10. Best Resources to Learn",
-                    "text": "Some excellent learning platforms:\n- **freeCodeCamp** (freeCodeCamp.org)\n- **MDN Web Docs** (developer.mozilla.org)\n- **The Odin Project** (theodinproject.com)\n- **W3Schools** (w3schools.com)\n- **YouTube Tutorials**"
+                    "text": "Some excellent learning platforms:\n- freeCodeCamp (freeCodeCamp.org)\n- MDN Web Docs (developer.mozilla.org)\n- The Odin Project (theodinproject.com)\n- W3Schools (w3schools.com)\n- YouTube Tutorials"
                 }
             ]
         }
-       
+
     ]
 };
