@@ -19,7 +19,7 @@ const containerVariants = {
 export default function Blog() {
   const posts = blogPosts.posts as BlogPost[]; // Cast to BlogPost[]
   return (
-    <div id="blog" className="min-h-screen bg-gray-50 dark:bg-gray-900 mt-5 overflow-hidden rounded-3xl py-12 px-4 sm:px-6 lg:px-8">
+    <div id="blog" className=" bg-gray-50 dark:bg-gray-900 mt-5 overflow-hidden rounded-3xl py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="inline-flex items-center gap-4 px-4 py-2 text-xs tracking-wide text-white border lg:px-5 border-dashed rounded-full shadow-orange-300 uppercase">
           <img src="/icons/blog.svg" className="w-4 h-4" alt="icons" />
