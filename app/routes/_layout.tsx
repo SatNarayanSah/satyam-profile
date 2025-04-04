@@ -1,6 +1,7 @@
 import { Outlet } from "@remix-run/react"
 import Header from "../components/Header"
 import Profile from "../components/Profile"
+import Foter from "~/components/Foter"
 
 const _layout = () => {
   return (
@@ -21,10 +22,11 @@ const _layout = () => {
           </div>
 
           {/* Main Content - Scrollable */}
-          <div className="w-full  p-4 lg:top-0 mt-0 lg:pt-14  flex flex-col items-center justify-center ">
-            <div className="max-h-[85vh] w-full rounded-3xl overflow-x-auto [&::-webkit-scrollbar]:hidden">
+          <div className="w-full  p-4 lg:top-0 mt-0   flex flex-col items-center justify-center ">
+            <div className="max-h-[vh] w-full rounded-3xl overflow-x-auto [&::-webkit-scrollbar]:hidden">
               <Outlet/>
             </div>
+          {/* <Foter/> */}
           </div>
         </div>
       </div>
