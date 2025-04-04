@@ -111,7 +111,7 @@ export default function BlogDetailsPage() {
         <div className="relative">
           <button
             onClick={() => setIsShareOpen(!isShareOpen)}
-            className="p-3 rounded-full bg-blue-600 hover:bg-blue-700 transition-colors shadow-lg"
+            className="p-3 rounded-full bg-orange-600 hover:bg-orange-700 transition-colors shadow-lg"
             aria-label="Share options"
             aria-expanded={isShareOpen}
           >
@@ -194,7 +194,7 @@ export default function BlogDetailsPage() {
       <article className="prose prose-lg dark:prose-invert max-w-none">
         <header className="mb-12">
           <div className="flex items-center justify-between mb-4">
-            <span className="inline-block px-3 py-1 text-sm font-medium text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 rounded-full">
+            <span className="inline-block px-3 py-1 text-sm font-medium text-orange-600 dark:text-orange-400 bg-orange-50 dark:bg-orange-900/30 rounded-full">
               {post.category}
             </span>
             <span className="text-sm text-gray-500 dark:text-gray-400">
@@ -239,8 +239,8 @@ export default function BlogDetailsPage() {
 
         <footer className="mt-12 pt-8 border-t border-gray-800">
           <Link
-            to="/blog"
-            className="inline-flex items-center px-4 py-3 text-sm font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-500 transition-colors"
+            to="/#blog"
+            className="inline-flex items-center px-4 py-3 text-sm font-medium text-white bg-orange-700 rounded-lg hover:bg-orange-800 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-500 transition-colors"
           >
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
