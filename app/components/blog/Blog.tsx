@@ -1,7 +1,8 @@
 import BlogCard from "./BlogCard";
 import { motion } from "framer-motion";
 import { BlogPost } from "../../types/types";
-import BlogPosts from "../../../data/blogPosts.json"
+// import BlogPosts from "../../../data/blogPosts.json"
+import { blogPosts } from "./blogPosts";
 
 
 const containerVariants = {
@@ -16,7 +17,7 @@ const containerVariants = {
 };
 
 export default function Blog() {
-  const posts = BlogPosts as BlogPost[];
+  const posts = blogPosts.posts as BlogPost[]; // Cast to BlogPost[]
   return (
     <div id="blog" className="min-h-screen bg-gray-50 dark:bg-gray-900 mt-5 overflow-hidden rounded-3xl py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">

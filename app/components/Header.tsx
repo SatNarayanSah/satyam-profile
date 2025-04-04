@@ -1,14 +1,14 @@
 import { useState } from "react";
-import { Link } from "@remix-run/react";
+import { Link, Links } from "@remix-run/react";
 import { motion } from "framer-motion";
 
 const menuItems = [
-  { id: "1", href: "#about", icon: "/icons/user.svg", name: "About" },
-  { id: "2", href: "#resume", icon: "/icons/resume.svg", name: "Resume" },
-  { id: "5", href: "#skill", icon: "/icons/product.svg", name: "Skills" },
-  { id: "3", href: "#project", icon: "/icons/work.svg", name: "Projects" },
-  { id: "4", href: "#blog", icon: "/icons/blog.svg", name: "BLogs" },
-  { id: "5", href: "#contact", icon: "/icons/contact.svg", name: "Contact" },
+  { id: "1", href: "/#about", icon: "/icons/user.svg", name: "About" },
+  { id: "2", href: "/#resume", icon: "/icons/resume.svg", name: "Resume" },
+  { id: "5", href: "/#skill", icon: "/icons/product.svg", name: "Skills" },
+  { id: "3", href: "/#project", icon: "/icons/work.svg", name: "Projects" },
+  { id: "4", href: "/#blog", icon: "/icons/blog.svg", name: "BLogs" },
+  { id: "5", href: "/#contact", icon: "/icons/contact.svg", name: "Contact" },
 ];
 
 // Animation variants for the header
@@ -51,9 +51,9 @@ export default function Header() {
     >
       <div className="container mx-auto p-2 flex justify-between items-center">
         {/* Logo or Brand Name */}
-        <div>
+        <Link to="/" >
           <img src="/images/t-logo.png" className="w-16" alt="logo" />
-        </div>
+        </Link>
 
         {/* Hamburger Icon (only visible on mobile) */}
         <div
