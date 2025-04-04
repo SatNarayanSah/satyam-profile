@@ -38,7 +38,7 @@ export default function BlogCard({ post }: { post: BlogPost }) {
       variants={cardVariants}
     >
       <motion.div variants={hoverVariants}>
-        <Link to={`/blog/${post.id}`} className="block overflow-hidden">
+        <Link to={`/blog/${post.slug}`} className="block overflow-hidden">
           <motion.img 
             className="w-full h-48 object-fit rounded-t-lg transition-transform duration-500 hover:scale-105"
             src={post.imageUrl}
@@ -59,7 +59,7 @@ export default function BlogCard({ post }: { post: BlogPost }) {
           </span>
         </div>
         
-        <Link to={`/blog/${post.id}`}>
+        <Link to={`/blog/${post.slug}`}>
           <motion.h3 
             className="mb-3 text-xl font-bold tracking-tight text-gray-900 dark:text-white"
             whileHover={{ color: "#3b82f6" }}
@@ -78,7 +78,7 @@ export default function BlogCard({ post }: { post: BlogPost }) {
           whileTap={{ scale: 0.98 }}
         >
           <Link
-            to={`/blog/${post.id}`}
+            to={`/blog/${post.slug}`}
             className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
             Read more

@@ -68,7 +68,7 @@ export interface ProfileData {
   
   // app/types/blog.d.ts
 export interface BlogPost {
-  id: string;
+  slug: string;
   title: string;
   description: string;
   imageUrl: string;

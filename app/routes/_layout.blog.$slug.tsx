@@ -9,7 +9,7 @@ const SITE_URL = "https://satnarayan.com.np";
 const SITE_NAME = "Sat Narayan Sah (Satyam Sah)";
 
 export async function loader({ params }: LoaderFunctionArgs) {
-  const post = blogPosts.posts.find((p) => p.id === params.id);
+  const post = blogPosts.posts.find((p) => p.slug === params.slug);
   
   if (!post) {
     throw new Response("Not Found", { status: 404 });
@@ -31,7 +31,7 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
   }
 
   const { post } = data;
-  const postUrl = `${SITE_URL}/blog/${post.id}`;
+  const postUrl = `${SITE_URL}/blog/${post.slug}`;
   const imageUrl = post.imageUrl.startsWith('http') ? post.imageUrl : `${SITE_URL}${post.imageUrl}`;
 
   return [
@@ -68,7 +68,7 @@ export default function BlogDetailsPage() {
     day: "numeric",
   });
 
-  const postUrl = `${SITE_URL}/blog/${post.id}`;
+  const postUrl = `${SITE_URL}/blog/${post.slug}`;
 
   const shareOnTwitter = () => {
     window.open(
@@ -107,7 +107,7 @@ export default function BlogDetailsPage() {
   return (
     <div className="max-w-4xl h-[80vh] bg-gray-900 lg:mt-16 overflow-y-auto rounded-3xl mx-auto px-4 py-8 [&::-webkit-scrollbar]:hidden relative">
       {/* Share Button */}
-      <div className="fixed top-16 z-50 lg:right-16 sm:right-4">
+      <div className="fixed top-16 z-50 lg:right-16 right-4">
         <div className="relative">
           <button
             onClick={() => setIsShareOpen(!isShareOpen)}
@@ -174,7 +174,7 @@ export default function BlogDetailsPage() {
                     className="flex items-center px-3 py-2 w-full text-left rounded-md hover:bg-gray-700 transition-colors"
                   >
                     <img 
-                      src="/icons/link.svg" 
+                      src="/icons/copy-link.svg" 
                       alt="" 
                       className="h-5 w-5 mr-3"
                       aria-hidden="true"

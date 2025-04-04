@@ -34,7 +34,7 @@ export default function Blog() {
           animate="visible"
         >
           {posts.map((post) => (
-            <BlogCard key={post.id} post={post} />
+            <BlogCard key={post.slug} post={post} />
           ))}
         </motion.div>
       </div>

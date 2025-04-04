@@ -4,7 +4,7 @@ import type { BlogPosts } from "~/types/types";
 export const blogPosts: BlogPosts = {
     posts: [
         {
-            "id": "1",
+            "slug": "how-to-learn-web-development",
             "title": "How to Learn Web Development: A Complete Guide",
             "description": "A step-by-step guide on how to start learning web development from scratch, covering the best resources, skills, and tools.",
             "imageUrl": "/images/blogPost-1.png",
