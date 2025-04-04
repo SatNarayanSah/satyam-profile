@@ -16,15 +16,18 @@ const containerVariants = {
 };
 
 export default function Blog() {
-const posts = BlogPosts as BlogPost[];
+  const posts = BlogPosts as BlogPost[];
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-12 px-4 sm:px-6 lg:px-8">
+    <div id="blog" className="min-h-screen bg-gray-50 dark:bg-gray-900 mt-5 overflow-hidden rounded-3xl py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">Latest Blog Posts</h1>
-        <p className="text-gray-600 dark:text-gray-300 mb-8">Discover our latest articles and insights</p>
-        
+        <div className="inline-flex items-center gap-4 px-4 py-2 text-xs tracking-wide text-white border lg:px-5 border-dashed rounded-full shadow-orange-300 uppercase">
+          <img src="/icons/blog.svg" className="w-4 h-4" alt="icons" />
+          Blogs
+        </div>
+        <h1 className="text-3xl font-bold mt-5 mb-5 text-gray-900 dark:text-white">
+          My Latest Blog Posts</h1>
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8"
           variants={containerVariants}
           initial="hidden"
           animate="visible"

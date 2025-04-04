@@ -7,7 +7,8 @@ const menuItems = [
   { id: "2", href: "#resume", icon: "/icons/resume.svg", name: "Resume" },
   { id: "5", href: "#skill", icon: "/icons/product.svg", name: "Skills" },
   { id: "3", href: "#project", icon: "/icons/work.svg", name: "Projects" },
-  { id: "4", href: "#contact", icon: "/icons/contact.svg", name: "Contact" },
+  { id: "4", href: "#blog", icon: "/icons/blog.svg", name: "BLogs" },
+  { id: "5", href: "#contact", icon: "/icons/contact.svg", name: "Contact" },
 ];
 
 // Animation variants for the header
