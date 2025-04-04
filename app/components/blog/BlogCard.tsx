@@ -51,7 +51,7 @@ export default function BlogCard({ post }: { post: BlogPost }) {
       
       <div className="p-5">
         <div className="flex items-center justify-between mb-2">
-          <span className="text-sm font-medium text-blue-600 dark:text-blue-400">
+          <span className="text-sm font-medium text-orange-600 dark:text-orange-400">
             {post.category}
           </span>
           <span className="text-xs text-gray-500 dark:text-gray-400">
@@ -62,7 +62,7 @@ export default function BlogCard({ post }: { post: BlogPost }) {
         <Link to={`/blog/${post.slug}`}>
           <motion.h3 
             className="mb-3 text-xl font-bold tracking-tight text-gray-900 dark:text-white"
-            whileHover={{ color: "#3b82f6" }}
+            whileHover={{ color: "orange" }}
             transition={{ duration: 0.2 }}
           >
             {post.title}
@@ -79,7 +79,7 @@ export default function BlogCard({ post }: { post: BlogPost }) {
         >
           <Link
             to={`/blog/${post.slug}`}
-            className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-orange-700 rounded-lg hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-orange-300 dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-800"
           >
             Read more
             <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
