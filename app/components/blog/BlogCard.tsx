@@ -31,7 +31,7 @@ export default function BlogCard({ post }: { post: BlogPost }) {
 
   return (
     <motion.div
-      className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 overflow-hidden"
+      className="max-w-sm border  rounded-lg shadow-sm bg-gray-800 border-gray-700 overflow-hidden"
       initial="hidden"
       animate="visible"
       whileHover="hover"
@@ -51,17 +51,17 @@ export default function BlogCard({ post }: { post: BlogPost }) {
       
       <div className="p-5">
         <div className="flex items-center justify-between mb-2">
-          <span className="text-sm font-medium text-orange-600 dark:text-orange-400">
+          <span className="text-sm font-medium text-orange-600 bg-gray-700 p-2 rounded-3xl dark:text-orange-400">
             {post.category}
           </span>
-          <span className="text-xs text-gray-500 dark:text-gray-400">
+          <span className="text-xs text-gray-200">
             {formattedDate} • {post.readTime}
           </span>
         </div>
         
         <Link to={`/blog/${post.slug}`}>
           <motion.h3 
-            className="mb-3 text-xl font-bold tracking-tight text-gray-900 dark:text-white"
+            className="mb-3 text-xl font-bold tracking-tight text-white"
             whileHover={{ color: "orange" }}
             transition={{ duration: 0.2 }}
           >
@@ -69,7 +69,7 @@ export default function BlogCard({ post }: { post: BlogPost }) {
           </motion.h3>
         </Link>
         
-        <p className="mb-4 font-normal text-gray-700 dark:text-gray-400 line-clamp-3">
+        <p className="mb-4 font-normal text-gray-300 line-clamp-3">
           {post.description}
         </p>
         

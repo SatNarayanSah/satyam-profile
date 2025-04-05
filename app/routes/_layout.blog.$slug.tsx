@@ -202,11 +202,11 @@ export default function BlogDetailsPage() {
             </span>
           </div>
           
-          <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white mb-6">
+          <h1 className="text-4xl font-bold tracking-tight text-white mb-6">
             {post.title}
           </h1>
           
-          <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
+          <p className="text-xl text-gray-300 mb-8">
             {post.description}
           </p>
           
@@ -223,10 +223,10 @@ export default function BlogDetailsPage() {
         <div className="space-y-10">
           {post.content.map((section, index) => (
             <section key={index} className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">
+              <h2 className="text-2xl font-semibold text-gray-200 mb-4">
                 {section.heading}
               </h2>
-              <div className="text-gray-600 dark:text-gray-300 whitespace-pre-line">
+              <div className="text-gray-300 whitespace-pre-line">
                 {section.text.split('\n').map((paragraph, i) => (
                   <p key={i} className="mb-4 last:mb-0">
                     {paragraph}
