@@ -20,7 +20,7 @@
   "buttons": [
     {
       "text": "Resume",
-      "url": "https://drive.google.com/uc?export=download&id=1kZD9lMODRZslCcr1ZX6JPJyvmBXEHtsw",
+      "url": "https://drive.google.com/uc?export=download&id=1jRnmWrbbCObdU8czgmFYpRmOUvniLb3X",
       "icon": "/icons/dowload.svg"
     },
     { "text": "Contact Me", "url": "#contact", "icon": "/icons/contact-me.svg" }
