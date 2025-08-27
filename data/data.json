@@ -31,7 +31,7 @@
   
   "contactInfo": [
     { "label": "Phone", "value": "+977-9812039791", "link": "callto:+977-9812039791" },
-    { "label": "Email", "value": "satnarayan5166@gmail.com", "link": "mailto:satnarayan5166@gmail.com" },
+    { "label": "Email", "value": "contact@satyamsah.com", "link": "mailto:contact@satyamsah.com" },
     { "label": "Skype", "value": "Sat Narayan Sah" },
     { "label": "Github", "value": "github.com/SatNarayanSah/" },
     { "label": "Language", "value": "Nepali, English, Hindi, Maithili" }
@@ -203,8 +203,8 @@
       {
         "icon": "email",
         "title": "E-mail",
-        "description": "satnarayan5166@gmail.com",
-        "link": "mailto:satnarayan5166@gmail.com"
+        "description": "contact@satyamsah.com",
+        "link": "mailto:contact@satyamsah.com"
       },
       {
         "icon": "phone",
