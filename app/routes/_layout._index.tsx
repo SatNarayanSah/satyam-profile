@@ -9,8 +9,12 @@ import Blog from "~/components/blog/Blog";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "Sat Narayan Sah (Satyam Sah) - MERN Stack Developer - Freelancer" },
-    { name: "description", content: "I'm Sat Narayan Sah, a MERN stack developer crafting scalable web apps with MongoDB, Express.js, React.js, Next.js, Remix & Node.js for top performance." },
+    { title: "Satyam Sah | Full Stack Developer & Solutions Architect | Web Applications Expert" },
+    { name: "description", content: "Portfolio of Satyam Sah - Full Stack Developer & Solutions Architect with expertise in scalable applications, microservices, and cloud architecture. Specializing in high-performance MERN stack solutions and system design." },
+    { property: "og:title", content: "Satyam Sah | Full Stack Developer & Solutions Architect | Professional Portfolio" },
+    { property: "og:description", content: "Discover the portfolio of a Full Stack Developer specializing in scalable applications, microservices architecture, and cloud-native solutions. Expert in MERN stack and system design." },
+    { property: "og:url", content: "https://satyamsah.com" },
+    { name: "keywords", content: "Satyam Sah, Full Stack Developer, Solutions Architect, Web Applications, System Design, Cloud Architecture, MERN Stack Expert, Microservices, React.js, Node.js, MongoDB, Express.js, TypeScript, Performance Optimization" },
   ];
 };
 

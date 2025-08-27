@@ -5,8 +5,8 @@ import type { BlogPost } from "../types/types";
 import { useState } from "react";
 
 // Site configuration
-const SITE_URL = "https://satnarayan.com.np";
-const SITE_NAME = "Sat Narayan Sah (Satyam Sah)";
+const SITE_URL = "https://satyamsah.com";
+const SITE_NAME = "Satyam Sah - Full Stack Developer";
 
 export async function loader({ params }: LoaderFunctionArgs) {
   const post = blogPosts.posts.find((p) => p.slug === params.slug);
@@ -35,25 +35,33 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
   const imageUrl = post.imageUrl.startsWith('http') ? post.imageUrl : `${SITE_URL}${post.imageUrl}`;
 
   return [
-    { title: post.title },
+    { title: `${post.title} | Satyam Sah's Blog` },
     { name: "description", content: post.description },
+    { name: "keywords", content: `${post.keywords || ''}, Satyam Sah, Full Stack Development, Web Development, Programming Tips` },
+    { name: "author", content: "Satyam Sah" },
     
     // Open Graph (Facebook)
     { property: "og:type", content: "article" },
     { property: "og:url", content: postUrl },
-    { property: "og:title", content: post.title },
+    { property: "og:title", content: `${post.title} | Satyam Sah's Blog` },
     { property: "og:description", content: post.description },
     { property: "og:image", content: imageUrl },
     { property: "og:site_name", content: SITE_NAME },
     { property: "og:locale", content: "en_US" },
     { property: "article:published_time", content: post.date },
+    { property: "article:author", content: "https://satyamsah.com" },
     
     // Twitter
     { name: "twitter:card", content: "summary_large_image" },
-    { name: "twitter:title", content: post.title },
+    { name: "twitter:title", content: `${post.title} | Satyam Sah's Blog` },
     { name: "twitter:description", content: post.description },
     { name: "twitter:image", content: imageUrl },
-    { name: "twitter:site", content: "@yourtwitterhandle" },
+    { name: "twitter:creator", content: "@satyamsah" },
+    { name: "twitter:site", content: "@satyamsah" },
+    
+    // Additional SEO
+    { name: "robots", content: "index, follow" },
+    { link: "canonical", href: postUrl },
   ];
 };
 
@@ -82,7 +90,7 @@ export default function BlogDetailsPage() {
     window.open(
       `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(postUrl)}`,
       '_blank',
-      'width=580,height=296'
+      'width=full,height=full'
     );
   };
 

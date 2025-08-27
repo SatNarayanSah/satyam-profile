@@ -29,10 +29,76 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Satyam Sah - Full Stack Developer & Solutions Architect with expertise in web applications. Specialized in scalable architectures using MERN stack, microservices, cloud solutions, and advanced web technologies. Delivering high-performance applications." />
+        <meta name="keywords" content="Satyam Sah, Full Stack Developer, Solutions Architect, Web Applications, MERN Stack Expert, Cloud Architecture, Microservices, System Design, React.js, Node.js, MongoDB, Express.js, TypeScript, AWS, Docker, Kubernetes, CI/CD, Performance Optimization" />
+        <meta name="author" content="Satyam Sah" />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Satyam Sah - Full Stack Developer & Solutions Architect | Web Applications Expert" />
+        <meta property="og:description" content="Full Stack Developer specializing in scalable applications, microservices architecture, and cloud solutions. Delivering high-performance systems with modern tech stack including MERN, TypeScript, and cloud services." />
+        <meta property="og:image" content="https://satyamsah.com/satyam.jpg" />
+        <meta property="og:url" content="https://satyamsah.com" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Satyam Sah - Senior Full Stack Engineer & Solutions Architect" />
+        <meta name="twitter:description" content="Enterprise application specialist with deep expertise in scalable architectures, cloud solutions, and modern web technologies. View my professional portfolio and technical achievements." />
+        <meta name="twitter:image" content="https://satyamsah.com/satyam.jpg" />
+        <link rel="canonical" href="https://satyamsah.com" />
         <link rel="apple-touch-icon" sizes="180x180" href="/satyam.jpg" />
         <link rel="icon" type="image/png" sizes="32x32" href="/satyam.jpg" />
         <Meta />
         <Links />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Satyam Sah",
+            "url": "https://satyamsah.com",
+            "image": "https://satyamsah.com/satyam.jpg",
+            "sameAs": [
+              "https://github.com/SatNarayanSah",
+              "https://www.linkedin.com/in/satnarayansah/",
+              "https://www.facebook.com/SatNarayanSahOfficial/",
+              "https://www.instagram.com/satyam_sah566"
+            ],
+            "jobTitle": "Full Stack Developer & Solutions Architect",
+            "worksFor": {
+              "@type": "Organization",
+              "name": "Independent Technology Consultant"
+            },
+            "description": "Full Stack Developer and Solutions Architect specializing in scalable applications, microservices architecture, and cloud solutions. Expert in building high-performance systems using modern technology stack.",
+            "knowsAbout": [
+              "Enterprise Application Architecture",
+              "Microservices Design",
+              "Cloud Solutions Architecture",
+              "MERN Stack Development",
+              "System Design & Optimization",
+              "DevOps & CI/CD",
+              "React.js & Node.js",
+              "MongoDB & Express.js",
+              "TypeScript & JavaScript",
+              "AWS & Cloud Services",
+              "Docker & Kubernetes",
+              "API Design & Development",
+              "Performance Optimization",
+              "Security Implementation",
+              "Scalable Architecture"
+            ],
+            "alumniOf": {
+              "@type": "Organization",
+              "name": "Mithila Development Fund"
+            },
+            "award": [
+              "Certified Solutions Architect",
+              "Full Stack Development Expert"
+            ],
+            "hasOccupation": {
+              "@type": "Occupation",
+              "name": "Senior Full Stack Engineer",
+              "occupationCategory": "Software Development",
+              "skills": "Enterprise Application Development, Cloud Architecture, System Design, Full Stack Development"
+            }
+          })}
+        </script>
       </head>
       <body>
         {children}
