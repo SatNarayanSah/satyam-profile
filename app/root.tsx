@@ -39,7 +39,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta property="og:url" content="https://satyamsah.com" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Satyam Sah - Senior Full Stack Engineer & Solutions Architect" />
+        <meta name="twitter:title" content="Satyam Sah -  Full Stack Engineer " />
         <meta name="twitter:description" content="Enterprise application specialist with deep expertise in scalable architectures, cloud solutions, and modern web technologies. View my professional portfolio and technical achievements." />
         <meta name="twitter:image" content="https://satyamsah.com/satyam.jpg" />
         <link rel="canonical" href="https://satyamsah.com" />
@@ -67,9 +67,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
             },
             "description": "Full Stack Developer and Solutions Architect specializing in scalable applications, microservices architecture, and cloud solutions. Expert in building high-performance systems using modern technology stack.",
             "knowsAbout": [
-              "Enterprise Application Architecture",
+            
               "Microservices Design",
-              "Cloud Solutions Architecture",
               "MERN Stack Development",
               "System Design & Optimization",
               "DevOps & CI/CD",
@@ -77,7 +76,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
               "MongoDB & Express.js",
               "TypeScript & JavaScript",
               "AWS & Cloud Services",
-              "Docker & Kubernetes",
               "API Design & Development",
               "Performance Optimization",
               "Security Implementation",
