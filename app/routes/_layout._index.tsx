@@ -9,7 +9,7 @@ import Blog from "~/components/blog/Blog";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "Satyam Sah | Full Stack Developer & Solutions Architect | Web Applications Expert" },
+    { title: "Satyam Sah | Full Stack Developer" },
     { name: "description", content: "Portfolio of Satyam Sah - Full Stack Developer & Solutions Architect with expertise in scalable applications, microservices, and cloud architecture. Specializing in high-performance MERN stack solutions and system design." },
     { property: "og:title", content: "Satyam Sah | Full Stack Developer & Solutions Architect | Professional Portfolio" },
     { property: "og:description", content: "Discover the portfolio of a Full Stack Developer specializing in scalable applications, microservices architecture, and cloud-native solutions. Expert in MERN stack and system design." },

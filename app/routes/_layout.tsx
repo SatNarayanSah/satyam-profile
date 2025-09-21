@@ -1,7 +1,7 @@
 import { Outlet } from "@remix-run/react"
 import Header from "../components/Header"
 import Profile from "../components/Profile"
-import Foter from "~/components/Foter"
+
 
 const _layout = () => {
   return (
