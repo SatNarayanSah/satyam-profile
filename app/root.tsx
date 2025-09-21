@@ -80,21 +80,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
               "Performance Optimization",
               "Security Implementation",
               "Scalable Architecture"
-            ],
-            "alumniOf": {
-              "@type": "Organization",
-              "name": "Mithila Development Fund"
-            },
-            "award": [
-              "Certified Solutions Architect",
-              "Full Stack Development Expert"
-            ],
-            "hasOccupation": {
-              "@type": "Occupation",
-              "name": "Senior Full Stack Engineer",
-              "occupationCategory": "Software Development",
-              "skills": "Enterprise Application Development, Cloud Architecture, System Design, Full Stack Development"
-            }
+            ]
+         
           })}
         </script>
       </head>
