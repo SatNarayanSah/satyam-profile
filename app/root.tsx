@@ -89,7 +89,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         {children}
         <ScrollRestoration />
         <Scripts />
-        <script async defer src="https://your-umami-instance.com/script.js" data-website-id="6763874b-0b5a-43ef-986e-93f15bcefae0"></script>
+     
       </body>
     </html>
   );
