@@ -72,21 +72,6 @@
   ],
   "skills": [
     {
-      "name": "Adobe Photoshop",
-      "icon": "/images/adobe-photoshop-icon.svg",
-      "percent": 40
-    },
-    {
-      "name": "Figma",
-      "icon": "/images/figma.svg",
-      "percent": 75
-    },
-    {
-      "name": "Adobe Illustrator",
-      "icon": "/images/illustrator.svg",
-      "percent": 30
-    },
-    {
       "name": "HTML5",
       "icon": "/images/html.svg",
       "percent": 95
@@ -116,9 +101,29 @@
       "icon": "/images/remix.png",
       "percent": 60
     },
+     {
+      "name": "Angular",
+      "icon": "/images/angular.svg",
+      "percent": 75
+    },
+    {
+      "name": "NodeJs",
+      "icon": "/images/nodejs.svg",
+      "percent": 80
+    },
+    {
+      "name": "Express Js",
+      "icon": "/images/expressjs.png",
+      "percent": 85
+    },
     {
       "name": "Python",
       "icon": "/images/python.png",
+      "percent": 80
+    },
+     {
+      "name": "Django",
+      "icon": "/images/django.svg",
       "percent": 60
     },
     {
@@ -131,6 +136,21 @@
       "name": "jQuery",
       "icon": "/images/jquery.svg",
       "percent": 70
+    },
+     {
+      "name": "Adobe Photoshop",
+      "icon": "/images/adobe-photoshop-icon.svg",
+      "percent": 40
+    },
+    {
+      "name": "Figma",
+      "icon": "/images/figma.svg",
+      "percent": 75
+    },
+    {
+      "name": "Adobe Illustrator",
+      "icon": "/images/illustrator.svg",
+      "percent": 30
     }
   ],
   "ResumeTitle": "Resume",

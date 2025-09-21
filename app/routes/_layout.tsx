@@ -5,7 +5,7 @@ import Profile from "../components/Profile"
 
 const _layout = () => {
   return (
-    <div>
+    <div className="bg-gray-950">
         <>
       {/* <ParticlesBackground/> */}
       <div className="lg:container bg-gray-950 mx-auto lg:pl-4   ">

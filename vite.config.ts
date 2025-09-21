@@ -21,5 +21,13 @@ export default defineConfig({
     }),
     tsconfigPaths(),
   ],
-  envPrefix: ['PUBLIC_']
+  envPrefix: ['PUBLIC_'],
+  resolve: {
+    alias: {
+      'remix:manifest': '/build/manifest.json',
+    },
+  },
+  optimizeDeps: {
+    exclude: ['@remix-run/react']
+  }
 });
