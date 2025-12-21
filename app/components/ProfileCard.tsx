@@ -78,7 +78,7 @@ const ProfileCard = ({ profile }: ProfileCardProps) => {
                     </div>
 
                     {/* Social Links */}
-                    <div className="flex justify-center mt-4 mb-24 space-x-4">
+                    <div className="flex justify-center mt-4 md:mb-10 mb-16 space-x-4">
                         {profile.socialLinks.map((link, index) => (
                             <motion.a
                                 key={index}
@@ -116,7 +116,7 @@ const ProfileCard = ({ profile }: ProfileCardProps) => {
                                 <div className="absolute inset-0 border-l border-r border-t border-transparent  hover:opacity-100 transition-opacity duration-300"></div>
 
                                 {/* Button Content */}
-                                <span className="text-sm z-10">{button.text}</span>
+                                <span className="text-sm whitespace-nowrap z-10">{button.text}</span>
                                 <img src={button.icon} className="w-4 h-4 z-10" alt="icons" />
                             </motion.a>
                         ))}

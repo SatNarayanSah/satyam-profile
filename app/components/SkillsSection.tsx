@@ -55,7 +55,7 @@ const {skills} = data
         {skills.map((skill, index) => (
           <motion.div
             key={index}
-            className="flex flex-col items-center justify-center gap-2 border w-32 p-2 px-4 rounded-3xl border-dashed border-orange-300 transition-all duration-700 hover:shadow-orange-300 ease-in-out"
+            className="flex flex-col items-center justify-center gap-2 border w-24 p-2 px-4 rounded-3xl border-dashed border-orange-300 transition-all duration-700 hover:shadow-orange-300 ease-in-out"
             variants={{
               hidden: { opacity: 0, y: 50 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
@@ -78,7 +78,7 @@ const {skills} = data
               <SkillProgress percent={skill.percent} />
             </motion.div>
             <motion.div
-              className="text-md md:text-sm text-white font-semibold tracking-widest text-center"
+              className="text-xs md:text-sm sm:text-xs text-white font-semibold tracking-widest text-center"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.3 }}

@@ -22,7 +22,7 @@ const _layout = () => {
           </div>
 
           {/* Main Content - Scrollable */}
-          <div className="w-full  p-4 lg:top-0 mt-0   flex flex-col items-center justify-center ">
+          <div className="w-full  lg:top-0 mt-0   flex flex-col items-center justify-center ">
             <div className="max-h-[vh] w-full rounded-3xl overflow-x-auto [&::-webkit-scrollbar]:hidden">
               <Outlet/>
             </div>

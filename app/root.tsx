@@ -47,43 +47,44 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <link rel="icon" type="image/png" sizes="32x32" href="/satyam.jpg" />
         <Meta />
         <Links />
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Person",
-            "name": "Satyam Sah",
-            "url": "https://satyamsah.com",
-            "image": "https://satyamsah.com/satyam.jpg",
-            "sameAs": [
-              "https://github.com/SatNarayanSah",
-              "https://www.linkedin.com/in/satnarayansah/",
-              "https://www.facebook.com/SatNarayanSahOfficial/",
-              "https://www.instagram.com/satyam_sah566"
-            ],
-            "jobTitle": "Full Stack Developer & Solutions Architect",
-            "worksFor": {
-              "@type": "Organization",
-              "name": "Independent Technology Consultant"
-            },
-            "description": "Full Stack Developer and Solutions Architect specializing in scalable applications, microservices architecture, and cloud solutions. Expert in building high-performance systems using modern technology stack.",
-            "knowsAbout": [
-            
-              "Microservices Design",
-              "MERN Stack Development",
-              "System Design & Optimization",
-              "DevOps & CI/CD",
-              "React.js & Node.js",
-              "MongoDB & Express.js",
-              "TypeScript & JavaScript",
-              "AWS & Cloud Services",
-              "API Design & Development",
-              "Performance Optimization",
-              "Security Implementation",
-              "Scalable Architecture"
-            ]
-         
-          })}
-        </script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Satyam Sah",
+              "url": "https://satyamsah.com",
+              "image": "https://satyamsah.com/satyam.jpg",
+              "sameAs": [
+                "https://github.com/SatNarayanSah",
+                "https://www.linkedin.com/in/satnarayansah/",
+                "https://www.facebook.com/SatNarayanSahOfficial/",
+                "https://www.instagram.com/satyam_sah566"
+              ],
+              "jobTitle": "Full Stack Developer & Solutions Architect",
+              "worksFor": {
+                "@type": "Organization",
+                "name": "Independent Technology Consultant"
+              },
+              "description": "Full Stack Developer and Solutions Architect specializing in scalable applications, microservices architecture, and cloud solutions. Expert in building high-performance systems using modern technology stack.",
+              "knowsAbout": [
+                "Microservices Design",
+                "MERN Stack Development",
+                "System Design & Optimization",
+                "DevOps & CI/CD",
+                "React.js & Node.js",
+                "MongoDB & Express.js",
+                "TypeScript & JavaScript",
+                "AWS & Cloud Services",
+                "API Design & Development",
+                "Performance Optimization",
+                "Security Implementation",
+                "Scalable Architecture"
+              ]
+            }),
+          }}
+        />
       </head>
       <body>
         {children}

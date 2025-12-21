@@ -5,10 +5,10 @@ import { motion } from "framer-motion";
 const menuItems = [
   { id: "1", href: "/#about", icon: "/icons/user.svg", name: "About" },
   { id: "2", href: "/#resume", icon: "/icons/resume.svg", name: "Resume" },
-  { id: "5", href: "/#skill", icon: "/icons/product.svg", name: "Skills" },
-  { id: "3", href: "/#project", icon: "/icons/work.svg", name: "Projects" },
-  { id: "4", href: "/#blog", icon: "/icons/blog.svg", name: "BLogs" },
-  { id: "5", href: "/#contact", icon: "/icons/contact.svg", name: "Contact" },
+  { id: "3", href: "/#skill", icon: "/icons/product.svg", name: "Skills" },
+  { id: "4", href: "/#project", icon: "/icons/work.svg", name: "Projects" },
+  { id: "5", href: "/#blog", icon: "/icons/blog.svg", name: "Blogs" },
+  { id: "6", href: "/#contact", icon: "/icons/contact.svg", name: "Contact" },
 ];
 
 // Animation variants for the header
