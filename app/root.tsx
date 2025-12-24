@@ -64,7 +64,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               ],
               "jobTitle": "Full Stack Developer (MERN & MEAN) & Solutions Architect",
               "worksFor": {
-                "@type": "Organization",
+                "@type": "Freelancer",
                 "name": "Independent Technology Consultant"
               },
               "description": "Full Stack Developer specializing in MERN and MEAN stacks, scalable microservices, and cloud-native architectures. Experienced in building production-ready web applications.",
