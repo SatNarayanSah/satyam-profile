@@ -44,7 +44,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="twitter:image" content="https://satyamsah.com/site.png" />
         <link rel="canonical" href="https://satyamsah.com" />
         <link rel="apple-touch-icon" sizes="180x180" href="/images/satyam.jpg" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/images/site.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/satyam.jpg" />
         <Meta />
         <Links />
         <script
