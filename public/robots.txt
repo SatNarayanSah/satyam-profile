@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Sitemap: https://satyamsah.com/sitemap.xml
+
+# If you want to block any paths, add Disallow rules below
+# Disallow: /private
