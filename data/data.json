@@ -5,9 +5,9 @@
   "bannerImages": "/images/banner1.png",
   
   "title": [
-    "Full - Stack Developer",
-    "Graphics Designer",
-    "Freelancer"
+    "Full-Stack Developer",
+    "UI/UX Designer",
+    "Web Developer"
     
   ],
   "socialLinks": [
@@ -27,7 +27,7 @@
   ],
   "AboutSection": "ABOUT ME",
   "AboutSectionTitle": "About Me",
-  "description": "Hi, my self Sat Narayan Sah (Satyam Sah) and Welcome! I am a highly experienced web developer with a strong track record of delivering successful live projects. With a keen eye for detail and a commitment to excellence, I specialize in creating responsive and user-friendly websites that meet client needs and exceed expectations. WordPress sites go beyond with exclusive designer.",
+  "description": "Welcome! I am Sat Narayan Sah, a results-driven Full-Stack Developer with 3+ years of professional experience in designing and developing innovative web solutions. I specialize in creating responsive, scalable, and user-centric digital experiences that drive business growth. With expertise in modern technologies including React, Next.js, Node.js, and Python, I deliver high-quality web applications and comprehensive digital strategies tailored to meet diverse client requirements.",
   
   "contactInfo": [
     { "label": "Phone", "value": "+977-9812039791", "link": "callto:+977-9812039791" },
@@ -156,42 +156,42 @@
   "ResumeTitle": "Resume",
   "experiences": [
     {
-      "title": "Freelancer.",
+      "title": "Full-Stack Developer & Freelancer",
       "company": "Remote",
       "duration": "2023 - Present",
-      "description": "Website & WebApp Devlopment, Graphics Designing, Email Marketing, Data Entry, Record Management, Data Tracking"
+      "description": "Develop and deploy responsive web applications and websites using modern technologies (React, Next.js, Node.js). Design user-friendly interfaces and implement robust backend solutions. Execute digital marketing campaigns and provide technical consulting to global clients."
     },
     {
       "title": "System Engineer",
-      "company": "मिथिला विकास कोष",
+      "company": "Mithila Development Fund",
       "duration": "2023 - 2024",
-      "description": "aintenance of Computer, Technical Support on Creating and Publishing Informations Data Management and tracking"
+      "description": "Maintained computer infrastructure and provided technical support. Managed data systems, documentation, and information publishing. Ensured optimal system performance and user technical assistance."
     },
     {
-      "title": "System Engineer",
-      "company": "MREC College",
-      "duration": "2012 - 2013",
-      "description": "Maintainance the System of lab,  Helping Students During the Practical, Question Typing"
+      "title": "Lab System Engineer",
+      "company": "Madhyamanchal Regional Engineering College (MREC)",
+      "duration": "2022 - 2023",
+      "description": "Managed computer laboratory systems and infrastructure. Provided technical support to students and faculty during practical sessions. Assisted with system maintenance and troubleshooting."
     }
   ],
   "educations": [
     {
       "institution": "Janakpur Community College",
-      "Field": "Bachlore of Information Technology",
+      "Field": "Bachelor of Information Technology (BIT)",
       "duration": "2023 - Present",
-      "description": "Currently, I am pursuing a BIT degree, have completed a Diploma in Computer Engineering, and am actively working on live web development projects."
+      "description": "Pursuing advanced studies in Information Technology with focus on web development, software engineering, and emerging technologies."
     },
     {
       "institution": "Madhyamanchal Regional Engineering College",
       "Field": "Diploma in Computer Engineering",
       "duration": "2018 - 2022",
-      "description": ""
+      "description": "Completed comprehensive diploma program covering computer systems, networking, and foundational software development principles."
     },
     {
-      "institution": "Shree Girija Secondary School Phulgama-2",
-      "Field": "SEE (Secondary Education Examination)",
-      "duration": "2008-2018",
-      "description": ""
+      "institution": "Shree Girija Secondary School",
+      "Field": "Secondary Education Examination (SEE)",
+      "duration": "2008 - 2018",
+      "description": "Completed secondary education with strong foundation in science and mathematics."
     }
   ],
   

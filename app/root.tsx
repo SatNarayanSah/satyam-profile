@@ -54,6 +54,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               "@context": "https://schema.org",
               "@type": "Person",
               "name": "Satyam Sah",
+              "alternateName": "Sat Narayan Sah",
               "url": "https://satyamsah.com",
               "image": "https://satyamsah.com/site.png",
               "sameAs": [
@@ -62,12 +63,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 "https://www.facebook.com/SatNarayanSahOfficial/",
                 "https://www.instagram.com/satyam_sah566"
               ],
-              "jobTitle": "Full Stack Developer (MERN & MEAN) & Solutions Architect",
+              "jobTitle": "Full Stack Developer",
               "worksFor": {
                 "@type": "Freelancer",
                 "name": "Independent Technology Consultant"
               },
-              "description": "Full Stack Developer specializing in MERN and MEAN stacks, scalable microservices, and cloud-native architectures. Experienced in building production-ready web applications.",
+              "description": "Full Stack Developer specializing in modern web development with MERN and MEAN stacks, scalable microservices, and cloud-native architectures.",
               "skills": ["MERN Stack","MEAN Stack","React","Angular","Node.js","Express","MongoDB","TypeScript"],
               "knowsAbout": [
                 "Microservices Design",
@@ -84,6 +85,25 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 "Security Implementation",
                 "Scalable Architecture"
               ]
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "Satyam Sah - Full Stack Developer",
+              "url": "https://satyamsah.com",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": {
+                  "@type": "EntryPoint",
+                  "urlTemplate": "https://satyamsah.com?q={search_term_string}"
+                },
+                "query-input": "required name=search_term_string"
+              }
             }),
           }}
         />
