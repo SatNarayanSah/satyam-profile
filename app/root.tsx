@@ -9,6 +9,10 @@ import type { LinksFunction } from "@remix-run/node";
 
 import "./tailwind.css";
 import { Toaster } from "react-hot-toast";
+import { ClientOnly } from "./components/ClientOnly";
+import TechBackground from "./components/TechBackground";
+import ScrollProgress from "./components/ScrollProgress";
+import SmoothScroll from "./components/SmoothScroll";
 
 export const links: LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -19,7 +23,7 @@ export const links: LinksFunction = () => [
   },
   {
     rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
+    href: "https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;500;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;600&display=swap",
   },
 ];
 
@@ -43,8 +47,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="twitter:description" content="Building high-performance web applications with MERN and MEAN stacks, microservices, and cloud-native patterns. See projects and contact information." />
         <meta name="twitter:image" content="https://satyamsah.com/site.png" />
         <link rel="canonical" href="https://satyamsah.com" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/images/satyam.jpg" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/images/satyam.jpg" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/Satyam.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/Satyam.png" />
         <Meta />
         <Links />
         <script
@@ -108,11 +112,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
           }}
         />
       </head>
-      <body>
+      <body className="antialiased selection:bg-accent-cyan/30 selection:text-white bg-bg-primary text-text-primary font-sans overflow-x-hidden">
+        <ClientOnly>
+          <SmoothScroll />
+          <TechBackground />
+          <ScrollProgress />
+        </ClientOnly>
         {children}
         <ScrollRestoration />
         <Scripts />
-     
       </body>
     </html>
   );

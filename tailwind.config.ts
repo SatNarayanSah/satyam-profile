@@ -4,23 +4,41 @@ export default {
   content: ["./app/**/{**,.client,.server}/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
-      boxShadow: {
-        // Custom shadow using orange-300
-        'orange-300': '-4px 4px 20px 2px rgba(253, 186, 116, 0.5)',
-        // Custom shadow using blue-300
-        'blue-300': '-4px -4px 20px 5px rgb(254, 215, 170, 0.75)',
+      animation: {
+        scan: "scan 3s linear infinite",
+      },
+      keyframes: {
+        scan: {
+          "0%": { top: "-100%" },
+          "100%": { top: "100%" },
+        },
+      },
+      colors: {
+        bg: {
+          primary: "#0a0612",
+          secondary: "#120b20",
+          card: "#150e24",
+        },
+        accent: {
+          cyan: "#8b5cf6",
+          purple: "#d946ef",
+          green: "#22c55e",
+          orange: "#ff6b35",
+        },
+        text: {
+          primary: "#e2e8f0",
+          muted: "#94a3b8",
+        },
       },
       fontFamily: {
-        sans: [
-          "Inter",
-          "ui-sans-serif",
-          "system-ui",
-          "sans-serif",
-          "Apple Color Emoji",
-          "Segoe UI Emoji",
-          "Segoe UI Symbol",
-          "Noto Color Emoji",
-        ],
+        sans: ["Inter", "sans-serif"],
+        space: ["Space Grotesk", "sans-serif"],
+        serif: ["Instrument Serif", "serif"],
+        mono: ["JetBrains Mono", "monospace"],
+      },
+      boxShadow: {
+        glow: "0 0 20px rgba(139, 92, 246, 0.35)",
+        "glow-purple": "0 0 20px rgba(139, 92, 246, 0.15)",
       },
     },
   },

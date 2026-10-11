@@ -28,6 +28,10 @@ export default defineConfig({
     },
   },
   optimizeDeps: {
+    include: ['@react-three/postprocessing', 'postprocessing'],
     exclude: ['@remix-run/react']
+  },
+  ssr: {
+    noExternal: [/^@react-three/, 'three', 'postprocessing', 'detect-gpu', 'three-stdlib', 'maath', 'animejs']
   }
 });

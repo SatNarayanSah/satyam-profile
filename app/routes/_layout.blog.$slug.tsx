@@ -1,4 +1,5 @@
-import { LoaderFunctionArgs, MetaFunction } from "@remix-run/node";
+import { motion, AnimatePresence } from "framer-motion";
+import { json, LoaderFunctionArgs, MetaFunction } from "@remix-run/node";
 import { Link, useLoaderData } from "@remix-run/react";
 import { blogPosts } from "../components/blog/blogPosts";
 import type { BlogPost } from "../types/types";
@@ -15,11 +16,7 @@ export async function loader({ params }: LoaderFunctionArgs) {
     throw new Response("Not Found", { status: 404 });
   }
 
-  return new Response(JSON.stringify({ post }), {
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+  return json({ post });
 }
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
@@ -37,7 +34,7 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
   return [
     { title: `${post.title} | Satyam Sah's Blog` },
     { name: "description", content: post.description },
-    { name: "keywords", content: `${post.keywords || ''}, Satyam Sah, Full Stack Development, Web Development, Programming Tips` },
+    { name: "keywords", content: `${(post as { keywords?: string }).keywords || ''}, Satyam Sah, Full Stack Development, Web Development, Programming Tips` },
     { name: "author", content: "Satyam Sah" },
     
     // Open Graph (Facebook)
@@ -90,7 +87,7 @@ export default function BlogDetailsPage() {
     window.open(
       `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(postUrl)}`,
       '_blank',
-      'width=full,height=full'
+      'width=600,height=400'
     );
   };
 
@@ -113,153 +110,131 @@ export default function BlogDetailsPage() {
   };
 
   return (
-    <div className="max-w-4xl h-[80vh] bg-gray-900 lg:mt-16 overflow-y-auto rounded-3xl mx-auto px-4 py-8 [&::-webkit-scrollbar]:hidden relative">
-      {/* Share Button */}
-      <div className="fixed top-16 z-50 lg:right-16 right-4">
-        <div className="relative">
-          <button
-            onClick={() => setIsShareOpen(!isShareOpen)}
-            className="p-3 rounded-full bg-orange-600 hover:bg-orange-700 transition-colors shadow-lg"
-            aria-label="Share options"
-            aria-expanded={isShareOpen}
-          >
-            <img 
-              src="/icons/share.svg" 
-              alt="" 
-              className="h-5 w-5"
-              aria-hidden="true"
-            />
-          </button>
-
-          {isShareOpen && (
-            <div 
-              className="absolute right-0 mt-2 w-56 bg-gray-800 rounded-lg shadow-xl z-10 border border-gray-700"
-              onMouseLeave={() => setIsShareOpen(false)}
-            >
-              <div className="p-2">
-                <h3 className="px-3 py-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">
-                  Share this post
-                </h3>
-                <div className="space-y-1">
-                  <button
-                    onClick={shareOnTwitter}
-                    className="flex items-center px-3 py-2 w-full text-left rounded-md hover:bg-gray-700 transition-colors"
-                  >
-                    <img 
-                      src="/icons/twitter.svg" 
-                      alt="" 
-                      className="h-5 w-5 mr-3"
-                      aria-hidden="true"
-                    />
-                    <span className="text-gray-200">Twitter</span>
-                  </button>
-                  <button
-                    onClick={shareOnFacebook}
-                    className="flex items-center px-3 py-2 w-full text-left rounded-md hover:bg-gray-700 transition-colors"
-                  >
-                    <img 
-                      src="/icons/facebook.svg" 
-                      alt="" 
-                      className="h-5 w-5 mr-3"
-                      aria-hidden="true"
-                    />
-                    <span className="text-gray-200">Facebook</span>
-                  </button>
-                  <button
-                    onClick={shareOnLinkedIn}
-                    className="flex items-center px-3 py-2 w-full text-left rounded-md hover:bg-gray-700 transition-colors"
-                  >
-                    <img 
-                      src="/icons/linkedin.svg" 
-                      alt="" 
-                      className="h-5 w-5 mr-3"
-                      aria-hidden="true"
-                    />
-                    <span className="text-gray-200">LinkedIn</span>
-                  </button>
-                  <button
-                    onClick={copyToClipboard}
-                    className="flex items-center px-3 py-2 w-full text-left rounded-md hover:bg-gray-700 transition-colors"
-                  >
-                    <img 
-                      src="/icons/copy-link.svg" 
-                      alt="" 
-                      className="h-5 w-5 mr-3"
-                      aria-hidden="true"
-                    />
-                    <span className="text-gray-200">
-                      {isCopied ? 'Link copied!' : 'Copy link'}
-                    </span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
+    <div className="relative w-full min-h-screen bg-bg-primary pt-32 pb-24 px-6 lg:px-20 overflow-hidden">
+      {/* Background Ambience */}
+      <div className="absolute inset-0 pointer-events-none opacity-20">
+         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent-cyan/5 blur-[120px] rounded-full" />
+         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent-purple/5 blur-[120px] rounded-full" />
       </div>
 
-      {/* Blog Content */}
-      <article className="prose prose-lg dark:prose-invert max-w-none">
-        <header className="mb-12">
-          <div className="flex items-center justify-between mb-4">
-            <span className="inline-block px-3 py-1 text-sm font-medium text-orange-600 dark:text-orange-400 bg-orange-50 dark:bg-orange-900/30 rounded-full">
-              {post.category}
-            </span>
-            <span className="text-sm text-gray-500 dark:text-gray-400">
-              {formattedDate} • {post.readTime}
-            </span>
+      <article className="relative z-10 max-w-4xl mx-auto space-y-12">
+        {/* Navigation & Actions */}
+        <div className="flex justify-between items-center">
+          <Link
+            to="/#blog"
+            className="inline-flex items-center gap-3 text-[10px] font-black   text-accent-cyan hover:text-white transition-colors group"
+          >
+            <div className="w-8 h-[1px] bg-accent-cyan/30 group-hover:bg-white transition-colors" />
+            [ Return_to_Archives ]
+          </Link>
+
+          <div className="relative">
+            <button
+              onClick={() => setIsShareOpen(!isShareOpen)}
+              className="p-3 rounded-full bg-bg-card/50 backdrop-blur-xl border border-white/10 hover:border-accent-cyan/40 transition-all text-accent-cyan shadow-glow-sm"
+              aria-label="Share options"
+            >
+              <img src="/icons/share.svg" alt="" className="h-5 w-5 invert" />
+            </button>
+            <AnimatePresence>
+              {isShareOpen && (
+                <motion.div 
+                  initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                  className="absolute right-0 mt-4 w-56 bg-bg-card/90 backdrop-blur-2xl rounded-2xl shadow-2xl z-50 border border-white/10 p-2 overflow-hidden"
+                >
+                  <div className="space-y-1">
+                    {[
+                      { name: 'Twitter', icon: 'twitter', action: shareOnTwitter },
+                      { name: 'Facebook', icon: 'facebook', action: shareOnFacebook },
+                      { name: 'LinkedIn', icon: 'linkedin', action: shareOnLinkedIn },
+                    ].map((platform) => (
+                      <button
+                        key={platform.name}
+                        onClick={platform.action}
+                        className="flex items-center px-4 py-3 w-full text-left rounded-xl hover:bg-white/5 transition-colors text-[10px] font-black   text-white/70 hover:text-accent-cyan"
+                      >
+                        <img src={`/icons/${platform.icon}.svg`} alt="" className="h-4 w-4 mr-3 invert" />
+                        {platform.name}
+                      </button>
+                    ))}
+                    <button
+                      onClick={copyToClipboard}
+                      className="flex items-center px-4 py-3 w-full text-left rounded-xl hover:bg-white/5 transition-colors text-[10px] font-black   text-white/70 hover:text-accent-cyan"
+                    >
+                      <img src="/icons/copy-link.svg" alt="" className="h-4 w-4 mr-3 invert" />
+                      {isCopied ? 'Access_Link_Copied' : 'Copy_Asset_Link'}
+                    </button>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
-          
-          <h1 className="text-4xl font-bold tracking-tight text-white mb-6">
-            {post.title}
-          </h1>
-          
-          <p className="text-xl text-gray-300 mb-8">
-            {post.description}
-          </p>
-          
-          <div className="w-full h-96 rounded-xl overflow-hidden mb-8 border border-gray-700">
+        </div>
+
+        {/* Header Metadata */}
+        <header className="space-y-8">
+          <div className="space-y-4">
+             <div className="flex items-center gap-4">
+                <div className="h-[2px] w-8 bg-accent-cyan" />
+                <span className="text-[10px] font-black  text-accent-cyan ">
+                  DATA_LOG // {post.category.toUpperCase()}
+                </span>
+             </div>
+             <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white font-space  leading-[0.9] tracking-tighter">
+                {post.title}
+             </h1>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-8 text-[10px] font-sans text-text-muted ">
+             <div className="flex items-center gap-2">
+                <span className="text-accent-cyan">Published</span>
+                <span>{formattedDate}</span>
+             </div>
+             <div className="flex items-center gap-2">
+                <span className="text-accent-cyan">Read time</span>
+                <span>{post.readTime}</span>
+             </div>
+          </div>
+
+          <div className="w-full aspect-video rounded-[2.5rem] overflow-hidden border border-white/5 bg-bg-card/50 shadow-2xl relative group">
             <img
               src={post.imageUrl}
               alt={post.title}
-              className="w-full h-full object-fit"
-              loading="lazy"
+              className="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-bg-primary/40 to-transparent" />
           </div>
         </header>
 
-        <div className="space-y-10">
+        {/* Content Body */}
+        <div className="space-y-12">
           {post.content.map((section, index) => (
-            <section key={index} className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-200 mb-4">
-                {section.heading}
-              </h2>
-              <div className="text-gray-300 whitespace-pre-line">
-                {section.text.split('\n').map((paragraph, i) => (
-                  <p key={i} className="mb-4 last:mb-0">
-                    {paragraph}
-                  </p>
-                ))}
+            <section key={index} className="space-y-6">
+              <div className="flex items-start gap-6">
+                 <span className="text-[10px] font-sans text-accent-cyan/40 mt-1.5">0{index + 1}</span>
+                 <div className="space-y-4">
+                    <h2 className="text-2xl md:text-3xl font-black text-white  tracking-tight font-space">
+                      {section.heading}
+                    </h2>
+                    <p className="text-lg text-text-primary/80 leading-relaxed font-medium whitespace-pre-line border-l-2 border-accent-cyan/10 pl-8">
+                      {section.text}
+                    </p>
+                 </div>
               </div>
             </section>
           ))}
         </div>
 
-        <footer className="mt-12 pt-8 border-t border-gray-800">
+        {/* Footer Navigation */}
+        <footer className="pt-12 border-t border-white/5">
           <Link
             to="/#blog"
-            className="inline-flex items-center px-4 py-3 text-sm font-medium text-white bg-orange-700 rounded-lg hover:bg-orange-800 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-500 transition-colors"
+            className="group flex flex-col items-center justify-center p-12 bg-bg-card/30 border border-white/5 rounded-[2.5rem] hover:border-accent-cyan/40 transition-all duration-500"
           >
-            <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              className="h-4 w-4 mr-2" 
-              viewBox="0 0 20 20" 
-              fill="currentColor"
-              aria-hidden="true"
-            >
-              <path fillRule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd" />
-            </svg>
-            Back to all posts
+             <span className="text-[10px] font-black  text-accent-cyan  mb-2">Thanks for reading</span>
+             <span className="text-2xl font-black text-white  tracking-tighter group-hover:text-accent-cyan transition-colors">Access All Transmissions →</span>
           </Link>
         </footer>
       </article>

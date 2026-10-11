@@ -1,122 +1,92 @@
-import { useState } from "react";
-import { Link, Links } from "@remix-run/react";
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { Link } from "@remix-run/react";
+import { motion, AnimatePresence } from "framer-motion";
 
-const menuItems = [
-  { id: "1", href: "/#about", icon: "/icons/user.svg", name: "About" },
-  { id: "2", href: "/#resume", icon: "/icons/resume.svg", name: "Resume" },
-  { id: "3", href: "/#skill", icon: "/icons/product.svg", name: "Skills" },
-  { id: "4", href: "/#project", icon: "/icons/work.svg", name: "Projects" },
-  { id: "5", href: "/#blog", icon: "/icons/blog.svg", name: "Blogs" },
-  { id: "6", href: "/#contact", icon: "/icons/contact.svg", name: "Contact" },
+const links = [
+  { id: "about", label: "About" },
+  { id: "services", label: "Services" },
+  { id: "skill", label: "Skills" },
+  { id: "resume", label: "Experience" },
+  { id: "project", label: "Projects" },
+  { id: "blog", label: "Blog" },
+  { id: "contact", label: "Contact" },
 ];
 
-// Animation variants for the header
-const headerVariants = {
-  hidden: { opacity: 0, y: -50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
-};
-
-// Animation variants for menu items
-const menuItemVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: "easeOut" },
-  },
-};
-
 export default function Header() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [active, setActive] = useState("");
 
-  // Toggle the menu on mobile
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
-  // Handle keyboard interaction (Enter or Space) for the hamburger icon
-  const handleKeyPress = (event: React.KeyboardEvent) => {
-    if (event.key === "Enter" || event.key === " ") {
-      toggleMenu();
-    }
-  };
+  // Highlight the nav link of the section currently in view.
+  useEffect(() => {
+    const obs = new IntersectionObserver(
+      (entries) => entries.forEach((e) => e.isIntersecting && setActive(e.target.id)),
+      { rootMargin: "-40% 0px -55% 0px" }
+    );
+    links.forEach((l) => {
+      const el = document.getElementById(l.id);
+      if (el) obs.observe(el);
+    });
+    return () => obs.disconnect();
+  }, []);
 
   return (
     <motion.header
-      className="fixed w-full  top-0 left-0 z-50 bg-gray-900 bg-opacity-50 text-white shadow-lg"
-      variants={headerVariants}
-      initial="hidden"
-      animate="visible"
+      initial={{ y: -40, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="fixed inset-x-0 top-3 z-[100] px-3 md:px-5"
     >
-      <div className="container mx-auto p-2 flex justify-between items-center">
-        {/* Logo or Brand Name */}
-        <Link to="/" >
-          <img src="/images/t-logo.png" className="w-16" alt="logo" />
+      <div className="glass flex h-14 w-full items-center justify-between !rounded-2xl bg-bg-primary/60 px-5">
+        <Link to="/" className="font-space text-lg font-bold text-white" onClick={() => setOpen(false)}>
+          Satyam<span className="accent-serif text-xl">_Sah</span>
         </Link>
 
-        {/* Hamburger Icon (only visible on mobile) */}
-        <div
-          className="lg:hidden text-lg z-30"
-          onClick={toggleMenu}
-          onKeyDown={handleKeyPress} // Updated to onKeyDown
-          tabIndex={0} // Make it focusable so it can receive keyboard events
-          role="button" // Make it semantically a button for accessibility
-          aria-label="Toggle Menu" // Added aria-label for accessibility
-        >
-          {isOpen ? (
-            <img src="/icons/toggle-close.svg" className="w-10 h-10 z-30" alt="close" />
-          ) : (
-            <img src="/icons/toggle.svg" className="w-10 h-10" alt="hamburger" />
-          )}
-        </div>
-
-        {/* Desktop Menu */}
-        <nav className="hidden lg:flex gap-8">
-          {menuItems.map((item, index) => (
-            <motion.div
-              key={item.id}
-              variants={menuItemVariants}
-              initial="hidden"
-              animate="visible"
-              transition={{ delay: index * 0.1 }}
+        <nav className="hidden items-center gap-1 lg:flex">
+          {links.map((l) => (
+            <Link
+              key={l.id}
+              to={`/#${l.id}`}
+              className={`rounded-full px-3 py-1.5 text-sm transition-colors ${
+                active === l.id ? "bg-white/10 text-white" : "text-slate-200 hover:text-white"
+              }`}
             >
-              <Link to={item.href} className="flex items-center gap-2">
-                <img src={item.icon} className="w-4 h-4" alt={item.name} />
-                <span className="text-sm">{item.name}</span>
-              </Link>
-            </motion.div>
+              {l.label}
+            </Link>
           ))}
         </nav>
+
+        <Link to="/#contact" className="hidden rounded-full bg-white px-5 py-2 text-sm font-semibold text-slate-900 shadow-[0_0_24px_rgba(255,255,255,0.25)] transition hover:scale-105 lg:block">
+          Hire me
+        </Link>
+
+        <button
+          aria-label="Toggle menu"
+          className="flex h-9 w-9 flex-col items-center justify-center gap-1.5 lg:hidden"
+          onClick={() => setOpen(!open)}
+        >
+          <motion.span animate={open ? { rotate: 45, y: 4 } : { rotate: 0, y: 0 }} className="h-0.5 w-5 bg-white" />
+          <motion.span animate={open ? { rotate: -45, y: -4 } : { rotate: 0, y: 0 }} className="h-0.5 w-5 bg-white" />
+        </button>
       </div>
 
-      {/* Mobile Menu (shown when isOpen is true) */}
-      {isOpen && (
-        <motion.div
-          className="lg:hidden z-0 bg-gray-900 text-white w-full absolute top-0 left-0 py-4"
-          variants={headerVariants}
-          initial="hidden"
-          animate="visible"
-          transition={{ duration: 0.5 }}
-        >
-          <nav className="flex flex-col items-center">
-            {menuItems.map((item, index) => (
-              <motion.div
-                key={item.id}
-                variants={menuItemVariants}
-                initial="hidden"
-                animate="visible"
-                transition={{ delay: index * 0.1 }}
-              >
-                <Link to={item.href} className="py-2 px-4 text-lg w-full flex items-center gap-2 bg-opacity-35 text-center">
-                  <img src={item.icon} className="w-6 h-6 mx-auto" alt={item.name} />
-                  <span>{item.name}</span>
+      <AnimatePresence>
+        {open && (
+          <motion.nav
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            className="glass mt-2 w-full overflow-hidden bg-bg-primary/90 lg:hidden"
+          >
+            <div className="flex flex-col p-3">
+              {links.map((l) => (
+                <Link key={l.id} to={`/#${l.id}`} onClick={() => setOpen(false)} className="rounded-md px-3 py-2.5 text-slate-100 hover:bg-white/5 hover:text-white">
+                  {l.label}
                 </Link>
-              </motion.div>
-            ))}
-          </nav>
-        </motion.div>
-      )}
+              ))}
+            </div>
+          </motion.nav>
+        )}
+      </AnimatePresence>
     </motion.header>
   );
 }

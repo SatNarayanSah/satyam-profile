@@ -1,11 +1,13 @@
 import type { MetaFunction } from "@remix-run/node";
-import AboutMe from "../components/About";
-import Projects from "../components/Projects";
-import Resume from "../components/Resume";
-import ServicesSection from "../components/Service";
-import SkillsSection from "../components/SkillsSection";
-import Contact from "./Contact";
+import Intro from "~/components/Intro";
+import AboutSection from "~/components/AboutSection";
+import ServicesSection from "~/components/ServicesSection";
+import SkillsGrid from "~/components/SkillsGrid";
+import Experience from "~/components/Experience";
+import Work from "~/components/Work";
 import Blog from "~/components/blog/Blog";
+import Contact from "./Contact";
+import TechMarquee from "~/components/TechMarquee";
 
 export const meta: MetaFunction = () => {
   return [
@@ -20,21 +22,19 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <>
-
-      {/* Main Content - Scrollable */}
-      <div className="w-full  p-4 lg:top-0 mt-0 lg:pt-14  flex flex-col items-center justify-center ">
-        <div className="max-h-[85vh] w-full rounded-3xl overflow-x-auto [&::-webkit-scrollbar]:hidden">
-          <AboutMe />
-          <ServicesSection />
-          <SkillsSection />
-          <Resume />
-          <Projects />
-          <Blog/>
-          <Contact />
-          
-        </div>
-      </div>
-    </>
+    <div className="flex w-full flex-col">
+      <Intro />
+      <TechMarquee />
+      <AboutSection />
+      <ServicesSection />
+      <SkillsGrid />
+      <Experience />
+      <Work />
+      <Blog />
+      <Contact />
+      <footer className="border-t border-white/10 px-5 py-6 text-center text-sm text-slate-300">
+        © {new Date().getFullYear()} Satyam Sah. Built with Remix & Tailwind.
+      </footer>
+    </div>
   );
 }
