@@ -1,7 +1,8 @@
 import type { Config } from "tailwindcss";
 
+
 export default {
-  content: ["./app/**/{**,.client,.server}/**/*.{js,jsx,ts,tsx}"],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
       animation: {
@@ -31,10 +32,10 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
-        space: ["Space Grotesk", "sans-serif"],
-        serif: ["Instrument Serif", "serif"],
-        mono: ["JetBrains Mono", "monospace"],
+        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        space: ["var(--font-display)", "system-ui", "sans-serif"],
+        serif: ["var(--font-serif)", "Georgia", "serif"],
+        mono: ["var(--font-mono)", "monospace"],
       },
       boxShadow: {
         glow: "0 0 20px rgba(139, 92, 246, 0.35)",
