@@ -36,7 +36,7 @@ export default function Index() {
       <Blog />
       <Contact />
       <footer className="border-t border-white/10 px-5 py-6 text-center text-sm text-slate-300">
-        © {new Date().getFullYear()} Satyam Sah. Built with Remix & Tailwind.
+        © {new Date().getFullYear()} Satyam Sah. Built with Next.js & Tailwind.
       </footer>
     </div>
   );
