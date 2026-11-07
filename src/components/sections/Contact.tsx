@@ -10,18 +10,47 @@ const field =
 
 export default function Contact() {
   const [sending, setSending] = useState(false);
+  const [whatsappFallbackUrl, setWhatsappFallbackUrl] = useState<string | null>(null);
 
   const submit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
+    const formData = new FormData(form);
+    const whatsappLink = data.socialLinks.find(({ url }) => url.startsWith("https://wa.me/"))?.url;
+
+    if (!whatsappLink) {
+      toast.error("WhatsApp contact is unavailable. Please email me directly.");
+      return;
+    }
+
+    const whatsappUrl = new URL(whatsappLink);
+    const phone = String(formData.get("phone") ?? "").trim();
+    const message = [
+      "New contact form message",
+      `Name: ${formData.get("name")}`,
+      `Email: ${formData.get("email")}`,
+      "",
+      `Message: ${formData.get("message")}`,
+    ];
+    if (phone) message.splice(3, 0, `Phone: ${phone}`);
+    whatsappUrl.searchParams.set("text", message.join("\n"));
+
+    const whatsappWindow = window.open(whatsappUrl.toString(), "_blank");
+    if (whatsappWindow) whatsappWindow.opener = null;
+    setWhatsappFallbackUrl(whatsappWindow ? null : whatsappUrl.toString());
+
     setSending(true);
     try {
       const res = await fetch("/api/send-mail", { method: "POST", body: new FormData(form) });
+      if (res.status === 503) {
+        toast.error("Email isn't configured yet. Please send your message in WhatsApp.");
+        return;
+      }
       if (!res.ok) throw new Error("failed");
-      toast.success("Message sent! I'll get back to you soon.");
+      toast.success(whatsappWindow ? "Email sent! Please send your message in WhatsApp too." : "Email sent. Open WhatsApp below to send your message.");
       form.reset();
     } catch {
-      toast.error("Couldn't send the message. Please email me directly.");
+      toast.error(whatsappWindow ? "Couldn't send the email. Your WhatsApp message is ready to send." : "Couldn't send the email. Use the WhatsApp link below or email me directly.");
     } finally {
       setSending(false);
     }
@@ -88,12 +117,22 @@ export default function Contact() {
               </label>
             </div>
             <label className="grid gap-1.5">
+              <span className="text-sm font-medium">Contact number <span className="text-muted">(optional)</span></span>
+              <input name="phone" type="tel" autoComplete="tel" placeholder="+977 98XXXXXXXX" className={field} />
+            </label>
+            <label className="grid gap-1.5">
               <span className="text-sm font-medium">Project details</span>
               <textarea name="message" required rows={6} placeholder="What are you building, and when do you need it?" className={`${field} resize-none`} />
             </label>
             <button type="submit" disabled={sending} className="btn-primary w-full !py-3.5 text-base disabled:opacity-60">
               {sending ? "Sending…" : "Send message"}
             </button>
+            <p className="text-center text-xs text-muted">WhatsApp opens with your message ready; tap Send there to deliver it.</p>
+            {whatsappFallbackUrl && (
+              <a href={whatsappFallbackUrl} target="_blank" rel="noreferrer" className="text-center text-sm text-accent underline underline-offset-4">
+                Open WhatsApp to send your message
+              </a>
+            )}
             <p className="text-center text-xs text-muted">I usually reply within one working day.</p>
           </form>
         </div>

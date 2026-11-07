@@ -18,11 +18,13 @@ npm start
 
 ## Contact form
 
-`POST /api/send-mail` sends mail through SMTP. Set these in `.env`:
+`POST /api/send-mail` sends mail through SMTP. Create a `.env` file in the project root and set these values from your email provider:
 
 ```
-SMTP_HOST=
-SMTP_PORT=
-SMTP_USER=
-SMTP_PASS=
+SMTP_HOST=your-provider-smtp-host
+SMTP_PORT=587
+SMTP_USER=your-email@example.com
+SMTP_PASS=your-smtp-password-or-app-password
 ```
+
+Port `587` uses STARTTLS; port `465` uses SSL/TLS. Add the same variables to your hosting provider's environment settings and restart/redeploy the app. Without valid SMTP settings, email delivery is unavailable, but the contact form still opens a prefilled WhatsApp message.
