@@ -1,21 +1,20 @@
 "use client";
 
 import { Toaster } from "react-hot-toast";
-import { ClientOnly } from "./ClientOnly";
-import SmoothScroll from "./SmoothScroll";
-import TechBackground from "./TechBackground";
-import ScrollProgress from "./ScrollProgress";
 
-// Client-only chrome that must not run during server rendering.
 export default function Providers() {
   return (
-    <>
-      <ClientOnly>
-        <SmoothScroll />
-        <TechBackground />
-        <ScrollProgress />
-      </ClientOnly>
-      <Toaster position="top-right" />
-    </>
+    <Toaster
+      position="top-right"
+      toastOptions={{
+        style: {
+          background: "rgb(var(--surface))",
+          color: "rgb(var(--ink))",
+          border: "1px solid rgb(var(--line) / 0.15)",
+          borderRadius: "14px",
+          fontSize: "0.9rem",
+        },
+      }}
+    />
   );
 }

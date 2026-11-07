@@ -2,93 +2,116 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
 
 const links = [
-  { id: "about", label: "About" },
+  { id: "work", label: "Work" },
   { id: "services", label: "Services" },
-  { id: "skill", label: "Skills" },
-  { id: "resume", label: "Experience" },
-  { id: "project", label: "Projects" },
-  { id: "blog", label: "Blog" },
-  { id: "contact", label: "Contact" },
+  { id: "skills", label: "Skills" },
+  { id: "journey", label: "Journey" },
+  { id: "writing", label: "Writing" },
 ];
+
+function ThemeToggle() {
+  const toggle = () => {
+    const d = document.documentElement;
+    const next = d.dataset.theme === "dark" ? "light" : "dark";
+    d.dataset.theme = next;
+    try {
+      localStorage.setItem("theme", next);
+    } catch {}
+  };
+  return (
+    <button type="button" onClick={toggle} aria-label="Toggle dark mode" className="grid h-9 w-9 place-items-center rounded-full border border-line/15 transition hover:bg-ink/5">
+      {/* Both icons render; CSS picks one so server and client markup match. */}
+      <svg viewBox="0 0 24 24" className="h-4 w-4 dark:hidden" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+        <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
+      </svg>
+      <svg viewBox="0 0 24 24" className="hidden h-4 w-4 dark:block" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+      </svg>
+    </button>
+  );
+}
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("");
+  const [scrolled, setScrolled] = useState(false);
 
-  // Highlight the nav link of the section currently in view.
   useEffect(() => {
-    const obs = new IntersectionObserver(
-      (entries) => entries.forEach((e) => e.isIntersecting && setActive(e.target.id)),
-      { rootMargin: "-40% 0px -55% 0px" }
-    );
-    links.forEach((l) => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    // Highlight the nav link of the section currently in view.
+    const obs = new IntersectionObserver((entries) => entries.forEach((e) => e.isIntersecting && setActive(e.target.id)), {
+      rootMargin: "-40% 0px -55% 0px",
+    });
+    [...links, { id: "contact" }].forEach((l) => {
       const el = document.getElementById(l.id);
       if (el) obs.observe(el);
     });
-    return () => obs.disconnect();
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      obs.disconnect();
+    };
   }, []);
 
   return (
-    <motion.header
-      initial={{ y: -40, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      className="fixed inset-x-0 top-3 z-[100] px-3 md:px-5"
+    <header
+      className={`fixed inset-x-0 top-0 z-[70] transition-colors duration-300 ${
+        scrolled || open ? "border-b border-line/10 bg-paper/85 backdrop-blur-md" : "border-b border-transparent"
+      }`}
     >
-      <div className="glass flex h-14 w-full items-center justify-between !rounded-2xl bg-bg-primary/60 px-5">
-        <Link href="/" className="font-space text-lg font-bold text-white" onClick={() => setOpen(false)}>
-          Satyam<span className="accent-serif text-xl">_Sah</span>
+      <div className="shell flex h-16 items-center justify-between gap-4">
+        <Link href="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
+          <span className="grid h-8 w-8 place-items-center rounded-lg bg-ink font-display text-sm font-bold text-paper">SS</span>
+          <span className="font-display text-[1.05rem] font-semibold tracking-tight">Satyam Sah</span>
         </Link>
 
-        <nav className="hidden items-center gap-1 lg:flex">
+        <nav aria-label="Primary" className="hidden items-center gap-1 rounded-full border border-line/10 bg-surface/60 p-1 md:flex">
           {links.map((l) => (
             <Link
               key={l.id}
               href={`/#${l.id}`}
-              className={`rounded-full px-3 py-1.5 text-sm transition-colors ${
-                active === l.id ? "bg-white/10 text-white" : "text-slate-200 hover:text-white"
-              }`}
+              aria-current={active === l.id ? "true" : undefined}
+              className={`rounded-full px-3.5 py-1.5 text-sm transition-colors ${active === l.id ? "bg-ink text-paper" : "text-muted hover:text-ink"}`}
             >
               {l.label}
             </Link>
           ))}
         </nav>
 
-        <Link href="/#contact" className="hidden rounded-full bg-white px-5 py-2 text-sm font-semibold text-slate-900 shadow-[0_0_24px_rgba(255,255,255,0.25)] transition hover:scale-105 lg:block">
-          Hire me
-        </Link>
-
-        <button
-          aria-label="Toggle menu"
-          className="flex h-9 w-9 flex-col items-center justify-center gap-1.5 lg:hidden"
-          onClick={() => setOpen(!open)}
-        >
-          <motion.span animate={open ? { rotate: 45, y: 4 } : { rotate: 0, y: 0 }} className="h-0.5 w-5 bg-white" />
-          <motion.span animate={open ? { rotate: -45, y: -4 } : { rotate: 0, y: 0 }} className="h-0.5 w-5 bg-white" />
-        </button>
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+          <Link href="/#contact" className="btn-primary hidden !py-2 sm:inline-flex">
+            Let&apos;s talk
+          </Link>
+          <button
+            type="button"
+            aria-label="Menu"
+            aria-expanded={open}
+            onClick={() => setOpen(!open)}
+            className="grid h-9 w-9 place-items-center rounded-full border border-line/15 md:hidden"
+          >
+            <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+              {open ? <path d="M6 6l12 12M18 6 6 18" /> : <path d="M4 8h16M4 16h16" />}
+            </svg>
+          </button>
+        </div>
       </div>
 
-      <AnimatePresence>
-        {open && (
-          <motion.nav
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            className="glass mt-2 w-full overflow-hidden bg-bg-primary/90 lg:hidden"
-          >
-            <div className="flex flex-col p-3">
-              {links.map((l) => (
-                <Link key={l.id} href={`/#${l.id}`} onClick={() => setOpen(false)} className="rounded-md px-3 py-2.5 text-slate-100 hover:bg-white/5 hover:text-white">
-                  {l.label}
-                </Link>
-              ))}
-            </div>
-          </motion.nav>
-        )}
-      </AnimatePresence>
-    </motion.header>
+      {open && (
+        <nav aria-label="Mobile" className="shell pb-4 md:hidden">
+          <div className="card grid gap-1 p-2">
+            {[...links, { id: "contact", label: "Contact" }].map((l) => (
+              <Link key={l.id} href={`/#${l.id}`} onClick={() => setOpen(false)} className="rounded-xl px-3 py-2.5 hover:bg-ink/5">
+                {l.label}
+              </Link>
+            ))}
+          </div>
+        </nav>
+      )}
+    </header>
   );
 }

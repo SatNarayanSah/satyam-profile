@@ -1,19 +1,32 @@
 import type { Metadata, Viewport } from "next";
-import { Plus_Jakarta_Sans, Sora, Instrument_Serif, JetBrains_Mono } from "next/font/google";
+import { Bricolage_Grotesque, Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import Header from "~/components/Header";
 import Providers from "~/components/Providers";
 
 const SITE_URL = "https://satyamsah.com";
 
-const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
-const sora = Sora({ subsets: ["latin"], weight: ["400", "600", "700", "800"], variable: "--font-display", display: "swap" });
+const sans = Geist({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
+const display = Bricolage_Grotesque({ subsets: ["latin"], variable: "--font-display", display: "swap" });
 const serif = Instrument_Serif({ subsets: ["latin"], weight: "400", style: ["normal", "italic"], variable: "--font-serif", display: "swap" });
-const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", display: "swap" });
+const mono = Geist_Mono({ subsets: ["latin"], variable: "--font-mono", display: "swap" });
+
+// Runs before first paint: applies the saved/system theme and, on the home page, hides every
+// [data-swarm] element so the swarm can rebuild it. This runs on every visit, even when the OS
+// asks for reduced motion (the owner wants the rebuild always on). If the engine never starts (JS error,
+// slow hydration) the page is revealed again after 8 seconds.
+const bootScript = `(function(){try{var d=document.documentElement,t=localStorage.getItem("theme");
+if(t!=="light"&&t!=="dark")t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";d.dataset.theme=t;
+if(location.pathname==="/"){d.setAttribute("data-swarm-boot","");
+setTimeout(function(){if(!window.__swarm)d.removeAttribute("data-swarm-boot")},8000)}}catch(e){}})();`;
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f6f4ef" },
+    { media: "(prefers-color-scheme: dark)", color: "#0e0d0c" },
+  ],
 };
 
 export const metadata: Metadata = {
@@ -83,17 +96,19 @@ const websiteLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${jakarta.variable} ${sora.variable} ${serif.variable} ${mono.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${sans.variable} ${display.variable} ${serif.variable} ${mono.variable}`}>
       <head>
+        <script dangerouslySetInnerHTML={{ __html: bootScript }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteLd) }} />
       </head>
-      <body className="antialiased selection:bg-accent-cyan/30 selection:text-white bg-bg-primary text-text-primary font-sans overflow-x-hidden">
+      <body className="min-h-screen overflow-x-clip">
+        <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-paper">
+          Skip to content
+        </a>
+        <Header />
+        <main id="main">{children}</main>
         <Providers />
-        <div className="relative min-h-screen">
-          <Header />
-          <main className="relative z-10 w-full pt-24">{children}</main>
-        </div>
       </body>
     </html>
   );

@@ -2,187 +2,89 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
 import type { BlogPost } from "~/types/types";
 
 const SITE_URL = "https://satyamsah.com";
 const SITE_NAME = "Satyam Sah - Full Stack Developer";
 
 export default function BlogPostView({ post }: { post: BlogPost }) {
-  const [isShareOpen, setIsShareOpen] = useState(false);
-  const [isCopied, setIsCopied] = useState(false);
+  const [shareOpen, setShareOpen] = useState(false);
+  const [copied, setCopied] = useState(false);
 
-  const formattedDate = new Date(post.date).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
+  const date = new Date(post.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+  const url = encodeURIComponent(`${SITE_URL}/blog/${post.slug}`);
+  const title = encodeURIComponent(post.title);
 
-  const postUrl = `${SITE_URL}/blog/${post.slug}`;
+  const share = [
+    { name: "X / Twitter", href: `https://twitter.com/intent/tweet?text=${title}&url=${url}` },
+    { name: "Facebook", href: `https://www.facebook.com/sharer/sharer.php?u=${url}` },
+    {
+      name: "LinkedIn",
+      href: `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${title}&summary=${encodeURIComponent(post.description)}&source=${encodeURIComponent(SITE_NAME)}`,
+    },
+  ];
 
-  const shareOnTwitter = () => {
-    window.open(
-      `https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(postUrl)}`,
-      '_blank',
-      'width=550,height=420'
-    );
-  };
-
-  const shareOnFacebook = () => {
-    window.open(
-      `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(postUrl)}`,
-      '_blank',
-      'width=600,height=400'
-    );
-  };
-
-  const shareOnLinkedIn = () => {
-    window.open(
-      `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(postUrl)}&title=${encodeURIComponent(post.title)}&summary=${encodeURIComponent(post.description)}&source=${encodeURIComponent(SITE_NAME)}`,
-      '_blank',
-      'width=550,height=420'
-    );
-  };
-
-  const copyToClipboard = async () => {
+  const copy = async () => {
     try {
-      await navigator.clipboard.writeText(postUrl);
-      setIsCopied(true);
-      setTimeout(() => setIsCopied(false), 2000);
+      await navigator.clipboard.writeText(`${SITE_URL}/blog/${post.slug}`);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
     } catch (err) {
-      console.error('Failed to copy URL: ', err);
+      console.error("Failed to copy URL: ", err);
     }
   };
 
   return (
-    <div className="relative w-full min-h-screen bg-bg-primary pt-28 pb-24 px-6 lg:px-20 overflow-hidden">
-      {/* Background Ambience */}
-      <div className="absolute inset-0 pointer-events-none opacity-20">
-         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent-cyan/5 blur-[120px] rounded-full" />
-         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent-purple/5 blur-[120px] rounded-full" />
+    <article className="shell max-w-3xl pb-24 pt-28 md:pt-32">
+      <div className="flex items-center justify-between">
+        <Link href="/#writing" className="text-sm font-medium text-muted transition hover:text-ink">
+          ← All articles
+        </Link>
+        <div className="relative">
+          <button type="button" onClick={() => setShareOpen(!shareOpen)} aria-expanded={shareOpen} className="btn-ghost !px-4 !py-2">
+            Share
+          </button>
+          {shareOpen && (
+            <div className="card absolute right-0 z-50 mt-2 grid w-48 gap-0.5 p-1.5 shadow-xl">
+              {share.map((s) => (
+                <a key={s.name} href={s.href} target="_blank" rel="noreferrer" className="rounded-lg px-3 py-2 text-sm hover:bg-ink/5">
+                  {s.name}
+                </a>
+              ))}
+              <button type="button" onClick={copy} className="rounded-lg px-3 py-2 text-left text-sm hover:bg-ink/5">
+                {copied ? "Link copied ✓" : "Copy link"}
+              </button>
+            </div>
+          )}
+        </div>
       </div>
 
-      <article className="relative z-10 max-w-4xl mx-auto space-y-12">
-        {/* Navigation & Actions */}
-        <div className="flex justify-between items-center">
-          <Link
-            href="/#blog"
-            className="inline-flex items-center gap-3 text-[10px] font-black   text-accent-cyan hover:text-white transition-colors group"
-          >
-            <div className="w-8 h-[1px] bg-accent-cyan/30 group-hover:bg-white transition-colors" />
-            [ Return_to_Archives ]
-          </Link>
+      <header className="mt-10">
+        <p className="label">
+          <span className="text-accent">{post.category}</span> · {date} · {post.readTime}
+        </p>
+        <h1 className="mt-4 font-display text-4xl font-semibold leading-[1.03] tracking-[-0.03em] md:text-6xl">{post.title}</h1>
+        <p className="mt-5 text-lg leading-relaxed text-muted">{post.description}</p>
+        <img src={post.imageUrl} alt="" className="card mt-10 aspect-video w-full object-cover" />
+      </header>
 
-          <div className="relative">
-            <button
-              onClick={() => setIsShareOpen(!isShareOpen)}
-              className="p-3 rounded-full bg-bg-card/50 backdrop-blur-xl border border-white/10 hover:border-accent-cyan/40 transition-all text-accent-cyan shadow-glow-sm"
-              aria-label="Share options"
-            >
-              <img src="/icons/share.svg" alt="" className="h-5 w-5 invert" />
-            </button>
-            <AnimatePresence>
-              {isShareOpen && (
-                <motion.div 
-                  initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                  className="absolute right-0 mt-4 w-56 bg-bg-card/90 backdrop-blur-2xl rounded-2xl shadow-2xl z-50 border border-white/10 p-2 overflow-hidden"
-                >
-                  <div className="space-y-1">
-                    {[
-                      { name: 'Twitter', icon: 'twitter', action: shareOnTwitter },
-                      { name: 'Facebook', icon: 'facebook', action: shareOnFacebook },
-                      { name: 'LinkedIn', icon: 'linkedin', action: shareOnLinkedIn },
-                    ].map((platform) => (
-                      <button
-                        key={platform.name}
-                        onClick={platform.action}
-                        className="flex items-center px-4 py-3 w-full text-left rounded-xl hover:bg-white/5 transition-colors text-[10px] font-black   text-white/70 hover:text-accent-cyan"
-                      >
-                        <img src={`/icons/${platform.icon}.svg`} alt="" className="h-4 w-4 mr-3 invert" />
-                        {platform.name}
-                      </button>
-                    ))}
-                    <button
-                      onClick={copyToClipboard}
-                      className="flex items-center px-4 py-3 w-full text-left rounded-xl hover:bg-white/5 transition-colors text-[10px] font-black   text-white/70 hover:text-accent-cyan"
-                    >
-                      <img src="/icons/copy-link.svg" alt="" className="h-4 w-4 mr-3 invert" />
-                      {isCopied ? 'Access_Link_Copied' : 'Copy_Asset_Link'}
-                    </button>
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-        </div>
+      <div className="mt-12 space-y-10">
+        {post.content.map((section, i) => (
+          <section key={i}>
+            <h2 className="font-display text-2xl font-semibold tracking-tight md:text-3xl">{section.heading}</h2>
+            <p className="mt-3 whitespace-pre-line text-lg leading-relaxed text-ink/85">{section.text}</p>
+          </section>
+        ))}
+      </div>
 
-        {/* Header Metadata */}
-        <header className="space-y-8">
-          <div className="space-y-4">
-             <div className="flex items-center gap-4">
-                <div className="h-[2px] w-8 bg-accent-cyan" />
-                <span className="text-[10px] font-black  text-accent-cyan ">
-                  DATA_LOG // {post.category.toUpperCase()}
-                </span>
-             </div>
-             <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white font-space  leading-[0.9] tracking-tighter">
-                {post.title}
-             </h1>
-          </div>
-
-          <div className="flex flex-wrap items-center gap-8 text-[10px] font-sans text-text-muted ">
-             <div className="flex items-center gap-2">
-                <span className="text-accent-cyan">Published</span>
-                <span>{formattedDate}</span>
-             </div>
-             <div className="flex items-center gap-2">
-                <span className="text-accent-cyan">Read time</span>
-                <span>{post.readTime}</span>
-             </div>
-          </div>
-
-          <div className="w-full aspect-video rounded-[2.5rem] overflow-hidden border border-white/5 bg-bg-card/50 shadow-2xl relative group">
-            <img
-              src={post.imageUrl}
-              alt={post.title}
-              className="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-bg-primary/40 to-transparent" />
-          </div>
-        </header>
-
-        {/* Content Body */}
-        <div className="space-y-12">
-          {post.content.map((section, index) => (
-            <section key={index} className="space-y-6">
-              <div className="flex items-start gap-6">
-                 <span className="text-[10px] font-sans text-accent-cyan/40 mt-1.5">0{index + 1}</span>
-                 <div className="space-y-4">
-                    <h2 className="text-2xl md:text-3xl font-black text-white  tracking-tight font-space">
-                      {section.heading}
-                    </h2>
-                    <p className="text-lg text-text-primary/80 leading-relaxed font-medium whitespace-pre-line border-l-2 border-accent-cyan/10 pl-8">
-                      {section.text}
-                    </p>
-                 </div>
-              </div>
-            </section>
-          ))}
-        </div>
-
-        {/* Footer Navigation */}
-        <footer className="pt-12 border-t border-white/5">
-          <Link
-            href="/#blog"
-            className="group flex flex-col items-center justify-center p-12 bg-bg-card/30 border border-white/5 rounded-[2.5rem] hover:border-accent-cyan/40 transition-all duration-500"
-          >
-             <span className="text-[10px] font-black  text-accent-cyan  mb-2">Thanks for reading</span>
-             <span className="text-2xl font-black text-white  tracking-tighter group-hover:text-accent-cyan transition-colors">Access All Transmissions →</span>
-          </Link>
-        </footer>
-      </article>
-    </div>
+      <footer className="mt-16 border-t border-line/15 pt-8">
+        <Link href="/#contact" className="card group block p-8 text-center transition hover:border-line/30">
+          <span className="label">Thanks for reading</span>
+          <span className="mt-2 block font-display text-2xl font-semibold tracking-tight group-hover:text-accent">
+            Have a project in mind? Let&apos;s talk →
+          </span>
+        </Link>
+      </footer>
+    </article>
   );
 }
