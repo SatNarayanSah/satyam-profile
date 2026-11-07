@@ -38,9 +38,7 @@ export default function Index() {
             <p data-swarm="text" className="w-fit">
               © {new Date().getFullYear()} Sat Narayan Sah · JanakpurDham, Nepal
             </p>
-            <p data-swarm="text" className="w-fit">
-              Built with Next.js, then rebuilt live by a swarm of tiny cursors.
-            </p>
+           
             <a data-swarm="text" href="#top" className="w-fit font-medium text-ink hover:text-accent">
               Back to top ↑
             </a>
