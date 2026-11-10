@@ -1,24 +1,24 @@
 import data from "~/../data/data.json";
 import { getWhatsAppUrl, socials, SocialIcon } from "./social";
 
-const stack = ["React", "Next.js", "TypeScript", "Node.js", "Express", "MongoDB", "Angular", "Python", "Django", "Tailwind CSS", "AWS", "Docker"];
+const stack = ["React", "Next.js", "TypeScript", "Node.js", "Express", "MongoDB", "Angular", "Python", "Django", "Tailwind CSS"];
 
 // Each word is its own swarm task so the headline gets rebuilt word by word.
 const headline: { word: string; accent?: boolean }[] = [
-  { word: "Full-stack" },
+  { word: "full-stack" },
   { word: "developer" },
   { word: "building" },
-  { word: "fast,", accent: true },
-  { word: "human" },
-  { word: "web" },
-  { word: "products." },
+  { word: "websites" },
+  { word: "and" },
+  { word: "apps" },
+  { word: "with care.", accent: true },
 ];
 
 const stats = [
-  { value: data.counters[0].number, label: "Years shipping production web apps" },
-  { value: data.counters[1].number, label: "Client & personal projects delivered" },
+  { value: data.counters[0].number, label: "Years of experience" },
+  { value: data.counters[1].number, label: "Projects worked on" },
   { value: data.counters[2].number.replace(/^0/, ""), label: "Open-source libraries" },
-  { value: String(data.languages.length), label: "Languages I work in with clients" },
+  { value: String(data.languages.length), label: "Languages I speak" },
 ];
 
 export default function Hero() {
@@ -31,7 +31,7 @@ export default function Hero() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-60" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
             </span>
-            Available for freelance projects
+            Open to projects and new opportunities
           </p>
 
           <h1 className="mt-6 font-display text-[clamp(2.6rem,5.6vw,4.6rem)] font-semibold leading-[0.98] tracking-[-0.04em]">
@@ -45,13 +45,13 @@ export default function Hero() {
           </h1>
 
           <p data-swarm="text" className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
-            I&apos;m {data.name}, Satyam to most. I design and ship responsive, scalable web apps with React, Next.js, Node and Python, from
-            the first sketch to production.
+            I&apos;m {data.name}, though most people call me Satyam. I enjoy making websites and web apps with React, Next.js, Node.js, and
+            Python. I&apos;m always learning and improving through the projects I work on.
           </p>
 
           <div className="mt-7 flex flex-wrap items-center gap-3">
             <a data-swarm="text" href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer" className="btn-primary">
-              Start a project <span aria-hidden="true">→</span>
+              Talk about a project <span aria-hidden="true">→</span>
             </a>
             <a data-swarm="text" href={data.buttons[0].url} target="_blank" rel="noreferrer" className="btn-ghost">
               Download CV <span aria-hidden="true">↓</span>
@@ -121,7 +121,7 @@ export default function Hero() {
 
         <div className="mt-6 flex flex-wrap items-center gap-2">
           <span data-swarm="text" className="label mr-2">
-            Daily stack
+            Tools I use
           </span>
           {stack.map((t) => (
             <span key={t} data-swarm="text" className="chip">

@@ -10,10 +10,10 @@ export default function Writing() {
       label="Writing"
       title={
         <>
-          Notes from the <span className="accent-serif">workbench</span>
+          What I&apos;m <span className="accent-serif">learning</span>
         </>
       }
-      intro="Guides and lessons from building for the web."
+      intro="Short guides and notes about web topics I am exploring."
     >
       <div className="grid gap-4">
         {blogPosts.posts.map((post) => {

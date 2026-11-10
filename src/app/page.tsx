@@ -9,15 +9,15 @@ import Contact from "~/components/sections/Contact";
 import SwarmRebuild from "~/components/swarm/SwarmRebuild";
 
 export const metadata: Metadata = {
-  title: "Satyam Sah | Full Stack Developer",
+  title: "Satyam Sah | Full-Stack Developer",
   description:
-    "Portfolio of Satyam Sah - Full Stack Developer & Solutions Architect with expertise in scalable applications, microservices, and cloud architecture. Specializing in high-performance MERN stack solutions and system design.",
+    "Hi, I'm Satyam, a full-stack developer from Nepal. I enjoy building websites and web apps with React, Next.js, Node.js, and Python while continuing to learn.",
   keywords:
-    "Satyam Sah, Full Stack Developer, Solutions Architect, Web Applications, System Design, Cloud Architecture, MERN Stack Expert, Microservices, React.js, Node.js, MongoDB, Express.js, TypeScript, Performance Optimization",
+    "Satyam Sah, Full-Stack Developer, Web Developer, React, Next.js, Node.js, Python, TypeScript, Nepal",
   openGraph: {
-    title: "Satyam Sah | Full Stack Developer & Solutions Architect | Professional Portfolio",
+    title: "Satyam Sah | Full-Stack Developer",
     description:
-      "Discover the portfolio of a Full Stack Developer specializing in scalable applications, microservices architecture, and cloud-native solutions. Expert in MERN stack and system design.",
+      "Take a look at the websites and web apps I've worked on and the tools I use as I continue learning full-stack development.",
     url: "https://satyamsah.com",
   },
 };

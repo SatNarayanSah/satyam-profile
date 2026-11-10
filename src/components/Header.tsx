@@ -86,7 +86,7 @@ export default function Header() {
         <div className="flex items-center gap-2">
           <ThemeToggle />
           <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer" className="btn-primary hidden !py-2 sm:inline-flex">
-            Let&apos;s talk
+            Get in touch
           </a>
           <button
             type="button"

@@ -6,8 +6,8 @@
   
   "title": [
     "Full-Stack Developer",
-    "UI/UX Designer",
-    "Web Developer"
+    "Web Developer",
+    "UI/UX Designer"
     
   ],
   "socialLinks": [
@@ -15,7 +15,7 @@
     { "icon": "/icons/instagram.svg", "url": "https://www.instagram.com/satyam_sah566" },
     { "icon": "/icons/github.svg", "url": "https://github.com/SatNarayanSah" },
     { "icon": "/icons/linkedin.svg", "url": "https://www.linkedin.com/in/satnarayansah/" },
-    { "icon": "/icons/whatsapp.svg", "url": "https://wa.me/9779812039791?text=Hello!%20I%20hope%20you're%20doing%20well.%20I%20would%20like%20to%20inquire%20about%20your%20services.%20Looking%20forward%20to%20hearing%20from%20you!" }
+    { "icon": "/icons/whatsapp.svg", "url": "https://wa.me/9779812039791?text=Hi%20Satyam%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20ask%20about%20a%20project." }
   ],
   "buttons": [
     {
@@ -27,7 +27,7 @@
   ],
   "AboutSection": "ABOUT ME",
   "AboutSectionTitle": "About Me",
-  "description": "Welcome! I am Sat Narayan Sah, a results-driven Full-Stack Developer with 3+ years of professional experience in designing and developing innovative web solutions. I specialize in creating responsive, scalable, and user-centric digital experiences that drive business growth. With expertise in modern technologies including React, Next.js, Node.js, and Python, I deliver high-quality web applications and comprehensive digital strategies tailored to meet diverse client requirements.",
+  "description": "Hi, I'm Satyam, a full-stack developer from JanakpurDham, Nepal. I enjoy building websites and web apps, and learning new tools along the way. I use React, Next.js, Node.js, and Python in my projects, and I'm always working to improve my skills.",
   
   "contactInfo": [
     { "label": "Phone", "value": "+977-9812039791", "link": "callto:+977-9812039791" },
@@ -37,37 +37,37 @@
     { "label": "Language", "value": "Nepali, English, Hindi, Maithili" }
   ],
   "counters": [
-    { "number": "3+", "label": "Years Of Experience" },
-    { "number": "6+", "label": "Handled Projects" },
-    { "number": "05+", "label": "Open Source Libraries" }
+    { "number": "3+", "label": "Years of experience" },
+    { "number": "6+", "label": "Projects worked on" },
+    { "number": "05+", "label": "Open-source libraries" }
   ],
   "ServiceectionName": "SERVICES",
   "ServiceSectionTitle": "My Services",
-  "ServiceDescription": "I offer professional web development services, delivering high-quality, responsive, and user-friendly websites tailored to your specific needs.",
+  "ServiceDescription": "I can help with websites, web apps, and simple designs. I like to understand what you need and work with you to find a good solution.",
   "services": [
     {
       "id": 1,
       "icon": "images/mobile.png",
-      "title": "Full-Stack Web Development",
-      "description": "I offer professional web development services, crafting responsive and user-friendly websites that meet your business needs and exceed your expectations."
+      "title": "Websites and Web Apps",
+      "description": "I build responsive websites and web apps using modern tools. I focus on clear layouts and features that are easy to use."
     },
     {
       "id": 2,
       "icon": "images/graphics-desining.png",
-      "title": "Graphics Designing",
-      "description": "I offer exceptional graphic design services, creating stunning visuals to elevate your brand and captivate your audience with professional, eye-catching designs."
+      "title": "Graphic Design",
+      "description": "I create simple graphics and visual designs for websites and social media."
     },
     {
       "id": 3,
       "icon": "/icons/digital.png",
       "title": "Digital Marketing",
-      "description": "Unlock your business's potential with expert digital marketing strategies tailored to drive results. Let's grow your brand together!"
+      "description": "I can help plan and manage online campaigns to help more people find your business."
     },
     {
       "id": 4,
       "icon": "/icons/email-marketing.png",
       "title": "Email Marketing",
-      "description": "Boost your brand's engagement with personalized email marketing campaigns that convert. Let's turn your emails into powerful sales tools!"
+      "description": "I can help create clear email updates and campaigns for your customers."
     }
   ],
   "skills": [
@@ -153,25 +153,25 @@
       "percent": 30
     }
   ],
-  "ResumeTitle": "Resume",
+  "ResumeTitle": "My Experience",
   "experiences": [
     {
-      "title": "Full-Stack Developer & Freelancer",
+      "title": "Freelance Web Developer",
       "company": "Remote",
       "duration": "2023 - Present",
-      "description": "Develop and deploy responsive web applications and websites using modern technologies (React, Next.js, Node.js). Design user-friendly interfaces and implement robust backend solutions. Execute digital marketing campaigns and provide technical consulting to global clients."
+      "description": "I build and update responsive websites and web apps using React, Next.js, and Node.js. I work on user-friendly layouts and backend features, and communicate with clients as projects progress."
     },
     {
       "title": "System Engineer",
       "company": "Mithila Development Fund",
       "duration": "2023 - 2024",
-      "description": "Maintained computer infrastructure and provided technical support. Managed data systems, documentation, and information publishing. Ensured optimal system performance and user technical assistance."
+      "description": "I helped maintain computers and IT systems, supported staff with technical issues, and kept records and information up to date."
     },
     {
       "title": "Lab System Engineer",
       "company": "Madhyamanchal Regional Engineering College (MREC)",
       "duration": "2022 - 2023",
-      "description": "Managed computer laboratory systems and infrastructure. Provided technical support to students and faculty during practical sessions. Assisted with system maintenance and troubleshooting."
+      "description": "I helped look after the computer labs and supported students and teachers during practical classes. I also assisted with maintenance and troubleshooting."
     }
   ],
   "educations": [
@@ -179,19 +179,19 @@
       "institution": "Janakpur Community College",
       "Field": "Bachelor of Information Technology (BIT)",
       "duration": "2023 - Present",
-      "description": "Pursuing advanced studies in Information Technology with focus on web development, software engineering, and emerging technologies."
+      "description": "I am studying Information Technology, with a focus on web development and software."
     },
     {
       "institution": "Madhyamanchal Regional Engineering College",
       "Field": "Diploma in Computer Engineering",
       "duration": "2018 - 2022",
-      "description": "Completed comprehensive diploma program covering computer systems, networking, and foundational software development principles."
+      "description": "I studied computer engineering, including computer systems, networking, and the basics of software development."
     },
     {
       "institution": "Shree Girija Secondary School",
       "Field": "Secondary Education Examination (SEE)",
       "duration": "2008 - 2018",
-      "description": "Completed secondary education with strong foundation in science and mathematics."
+      "description": "I completed secondary school with a focus on science and mathematics."
     }
   ],
   
@@ -199,9 +199,9 @@
     { "name": "Website hosting" },
     { "name": "WordPress Development" },
     { "name": "Hosting Installation" },
-    { "name": "SEO Optimize" },
-    { "name": "Responsive and mobile-ready" },
-    { "name": "Advertising services" },
+    { "name": "SEO basics" },
+    { "name": "Responsive web design" },
+    { "name": "Online advertising" },
     { "name": "HTML, CSS, jQuery" },
     { "name": "Search engine marketing" }
   ],
@@ -213,7 +213,7 @@
   ],
   "contact": {
     "title": "Contact Me.",
-    "subtitle": "Feel free to contact me for any of your web development needs. I'm here to help bring your projects to life with high quality and timely delivery.",
+    "subtitle": "Have an idea or a question? I'd be happy to hear from you and talk about how I might be able to help.",
     "info": [
       {
         "icon": "location",
@@ -240,7 +240,7 @@
       "id": 1,
       "image": "/images/digine[tronics.png",
       "alt": "digineptronics",
-      "title": " Business website",
+      "title": "Business Website",
       "tags": ["#react", "#tailwind", "#django", "#js",  "#python"],
       "buttons": [
         {
@@ -259,7 +259,7 @@
       "id": 2,
       "image": "/images/site.png",
       "alt": "Mithila Art Classifier",
-      "title": "Education Website",
+      "title": "Mithila Art Classifier",
       "tags": ["#HTML", "#CSS", "#JS", "#PHP"],
       "buttons": [
         {
@@ -277,7 +277,7 @@
     {
       "id": 3,
       "image": "/images/foodmandu_clone.png",
-      "alt": "images",
+      "alt": "Foodmandu food delivery app concept",
       "title": "Foodmandu Clone",
       "tags": ["#reactJs", "#TailwindCSs", "#OpenAPI", "#JS", "#Node"],
       "buttons": [
@@ -297,7 +297,7 @@
     {
       "id": 4,
       "image": "/images/theweddyfilmer.png",
-      "alt": "images",
+      "alt": "Wedding videography website",
       "title": "Wedding Videography Website",
       "tags": ["#Nextjs", "#TailwindCSs", "Django", "#JS", "#Nodejs", "#Python"],
       "buttons": [
@@ -316,7 +316,7 @@
     {
       "id": 5,
       "image": "/images/advice.png",
-      "alt": "images",
+      "alt": "Advice generator website",
       "title": "Advice Generator Website",
       "tags": ["#reactJs", "#TailwindCSs", "#OpenAPI", "#JS", "#Node"],
       "buttons": [
@@ -335,7 +335,7 @@
     {
       "id": 6,
       "image": "/images/countries.png",
-      "alt": "images",
+      "alt": "Country information website",
       "title": "Countries Details Website",
       "tags": ["#reactJs", "#TailwindCSs", "#OpenAPI", "#JS", "#Node"],
       "buttons": [
@@ -354,7 +354,7 @@
     {
       "id": 7,
       "image": "/images/devfinder.png",
-      "alt": "images",
+      "alt": "GitHub profile search website",
       "title": "Developer GitHub Profile Finder",
       "tags": ["#reactJs", "#TailwindCSs", "#OpenAPI", "#JS", "#Node"],
       "buttons": [

@@ -55,10 +55,10 @@ export default function Skills() {
       label="Skills"
       title={
         <>
-          Tools I <span className="accent-serif">trust</span>
+          Tools I <span className="accent-serif">use</span>
         </>
       }
-      intro="My comfort level with each, rated honestly. I use the frontend tools every day; the design tools come out when a project needs them."
+      intro="These are some of the tools I have used in my projects. I am most familiar with frontend development and continue to practice with the others."
     >
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         <SkillGroup {...groups[0]} />

@@ -19,16 +19,16 @@ function Links({ p }: { p: Project }) {
     <div className="flex flex-wrap gap-2">
       {live ? (
         <a data-swarm="text" href={live} target="_blank" rel="noreferrer" className="btn-primary !px-4 !py-2">
-          Live site <span aria-hidden="true">↗</span>
+          View website <span aria-hidden="true">↗</span>
         </a>
       ) : (
-        <a data-swarm="text" href={getWhatsAppUrl(`Hi Satyam, could you share more about ${p.title.trim()}?`)} target="_blank" rel="noopener noreferrer" className="btn-ghost !px-4 !py-2">
-          Request a demo
+        <a data-swarm="text" href={getWhatsAppUrl(`Hi Satyam, could you tell me a little more about ${p.title.trim()}?`)} target="_blank" rel="noopener noreferrer" className="btn-ghost !px-4 !py-2">
+          Ask about this project
         </a>
       )}
       {repo && (
         <a data-swarm="text" href={repo} target="_blank" rel="noreferrer" className="btn-ghost !px-4 !py-2">
-          Source <span aria-hidden="true">↗</span>
+          View code <span aria-hidden="true">↗</span>
         </a>
       )}
     </div>
@@ -49,7 +49,7 @@ export default function Work() {
           Things I&apos;ve <span className="accent-serif">built</span>
         </>
       }
-      intro="A mix of client sites and products I built to learn something new. Most are live, and the code for many of them is on GitHub."
+      intro="Here are some projects I've worked on. Some were made for clients, while others helped me practice new skills. You can explore live sites and source code where available."
     >
       <article data-swarm="block" className="card grid overflow-hidden md:grid-cols-12">
         <div className="overflow-hidden border-b border-line/10 bg-ink/5 md:col-span-7 md:border-b-0 md:border-r">

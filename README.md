@@ -2,7 +2,7 @@
 
 # Satyam Sah — Portfolio
 
-**A personal portfolio for my work, services, and writing.**
+**A personal portfolio of projects, skills, and things I’m learning.**
 
 [![Live portfolio](https://img.shields.io/badge/Live%20Portfolio-satyamsah.com-e8401a?style=for-the-badge)](https://satyamsah.com)
 [![Next.js](https://img.shields.io/badge/Next.js-16-111111?style=flat-square&logo=next.js)](https://nextjs.org/)
@@ -18,7 +18,7 @@
 
 ## About
 
-I’m **Satyam Sah**, a full-stack developer building responsive web products and applications. This repository contains my portfolio: selected projects, services, experience, skills, and articles about the web.
+Hi, I’m **Satyam Sah**, a full-stack developer from Nepal. I enjoy making websites and web apps, learning new tools, and improving with each project. This repository contains my portfolio, project examples, and notes about what I’m learning.
 
 The site is built with the Next.js App Router and TypeScript. Blog articles are written in Markdown and rendered as statically generated pages. Visitors can contact me directly through WhatsApp.
 

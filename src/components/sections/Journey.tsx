@@ -66,10 +66,10 @@ export default function Journey() {
       label="Journey"
       title={
         <>
-          Where I&apos;ve <span className="accent-serif">been</span>
+          My <span className="accent-serif">journey</span>
         </>
       }
-      intro="I started out running engineering labs and IT systems, and now I build full-stack products for clients while finishing my BIT degree."
+      intro="I began by helping with computer labs and IT systems. I now work on web projects while studying for my BIT degree."
     >
       <div className="grid gap-12 lg:grid-cols-2 lg:gap-10">
         <Timeline heading="Experience" entries={work} />

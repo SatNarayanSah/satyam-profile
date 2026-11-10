@@ -31,12 +31,12 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Satyam Sah | Full Stack Developer",
+  title: "Satyam Sah | Full-Stack Developer",
   description:
-    "Satyam Sah — Full Stack Developer (MERN & MEAN). I build scalable, high-performance web applications using MERN and MEAN stacks, microservices, and cloud-native architectures.",
+    "Hi, I'm Satyam, a full-stack developer from Nepal. I enjoy building websites and web apps with React, Next.js, Node.js, and Python while continuing to learn.",
   keywords: [
-    "Satyam Sah", "Full Stack Developer", "MERN", "MEAN", "React", "Angular", "Node.js", "Express",
-    "MongoDB", "JavaScript", "TypeScript", "AWS", "DevOps", "Microservices", "System Design",
+    "Satyam Sah", "Full-Stack Developer", "Web Developer", "React", "Next.js", "Node.js",
+    "Python", "JavaScript", "TypeScript", "Nepal",
   ],
   authors: [{ name: "Satyam Sah" }],
   robots: { index: true, follow: true },
@@ -46,18 +46,18 @@ export const metadata: Metadata = {
     apple: [{ url: "/images/Satyam.png", sizes: "180x180" }],
   },
   openGraph: {
-    title: "Satyam Sah — Full Stack Developer (MERN & MEAN) | Web & Cloud Apps",
+    title: "Satyam Sah — Full-Stack Developer",
     description:
-      "Full Stack Developer focused on MERN and MEAN stacks, building scalable web applications, microservices, and cloud-native solutions. Explore my portfolio and projects.",
+      "I'm Satyam, a full-stack developer from Nepal. Take a look at the websites and web apps I've worked on.",
     url: SITE_URL,
     type: "website",
     images: [`${SITE_URL}/site.png`],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Satyam Sah — Full Stack Developer (MERN & MEAN)",
+    title: "Satyam Sah — Full-Stack Developer",
     description:
-      "Building high-performance web applications with MERN and MEAN stacks, microservices, and cloud-native patterns. See projects and contact information.",
+      "I enjoy building websites and web apps with React, Next.js, Node.js, and Python. Explore my projects and get in touch.",
     images: [`${SITE_URL}/site.png`],
   },
 };
@@ -75,10 +75,10 @@ const personLd = {
     "https://www.facebook.com/SatNarayanSahOfficial/",
     "https://www.instagram.com/satyam_sah566",
   ],
-  jobTitle: "Full Stack Developer",
-  worksFor: { "@type": "Organization", name: "Independent Technology Consultant" },
+  jobTitle: "Full-Stack Developer",
+  worksFor: { "@type": "Organization", name: "Freelance" },
   description:
-    "Full Stack Developer specializing in modern web development with MERN and MEAN stacks, scalable microservices, and cloud-native architectures.",
+    "Full-stack developer who enjoys building websites and web apps and learning new tools.",
   knowsAbout: [
     "Microservices Design", "MERN Stack Development", "MEAN Stack Development", "System Design & Optimization",
     "DevOps & CI/CD", "React.js & Node.js", "MongoDB & Express.js", "TypeScript & JavaScript",

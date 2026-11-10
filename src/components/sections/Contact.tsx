@@ -16,7 +16,7 @@ export default function Contact() {
               <span className="text-accent">06</span> / Contact
             </p>
             <h2 data-swarm="text" className="mt-4 font-display text-4xl font-semibold leading-[1.02] tracking-[-0.03em] md:text-5xl">
-              Have a project in mind? Let&apos;s <span className="accent-serif">build</span> it.
+              Have an idea? I&apos;d be happy to <span className="accent-serif">hear</span> about it.
             </h2>
             <p data-swarm="text" className="mt-4 max-w-xl leading-relaxed text-muted">
               {data.contact.subtitle}
@@ -29,7 +29,7 @@ export default function Contact() {
               className="btn-primary mt-7 w-fit !px-6 !py-3.5 text-base"
             >
               {whatsapp && <SocialIcon path={whatsapp.path} className="h-5 w-5" />}
-              Message me on WhatsApp <span aria-hidden="true">↗</span>
+              Send me a WhatsApp message <span aria-hidden="true">↗</span>
             </a>
             <p className="mt-3 text-sm text-muted">
               WhatsApp will open with a message ready to send. I usually reply within one working day.
