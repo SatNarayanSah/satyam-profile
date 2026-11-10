@@ -83,12 +83,12 @@ export default function Hero() {
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-5 pt-16 text-white">
               <figcaption data-swarm="text" className="w-fit">
                 <span className="block font-display text-xl font-semibold">{data.name}</span>
-                <span className="block font-mono text-xs uppercase tracking-[0.14em] text-white/75">JanakpurDham, Nepal · GMT+5:45</span>
+                {/* <span className="block font-mono text-xs uppercase tracking-[0.14em] text-white/75">JanakpurDham, Nepal · GMT+5:45</span> */}
               </figcaption>
             </div>
-            <span data-swarm="text" className="absolute right-4 top-4 rotate-3 rounded-full bg-accent px-3 py-1.5 font-mono text-xs font-semibold text-accent-ink shadow-lg">
+            {/* <span data-swarm="text" className="absolute right-4 top-4 rotate-3 rounded-full bg-accent px-3 py-1.5 font-mono text-xs font-semibold text-accent-ink shadow-lg">
               {data.title[0]} · {data.title[1]}
-            </span>
+            </span> */}
           </figure>
 
           <div data-swarm="block" className="card mt-3 p-5">
