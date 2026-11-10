@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { getWhatsAppUrl } from "./sections/social";
+import { swarmStore } from "./swarm/engine";
 
 const links = [
   { id: "work", label: "Work" },
@@ -41,22 +42,27 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 8);
+      const activeLine = window.innerHeight * 0.35;
+      const current = [...links].reverse().find((link) => {
+        const section = document.getElementById(link.id);
+        return section && section.getBoundingClientRect().top <= activeLine;
+      });
+      setActive(current?.id ?? "");
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
-
-    // Highlight the nav link of the section currently in view.
-    const obs = new IntersectionObserver((entries) => entries.forEach((e) => e.isIntersecting && setActive(e.target.id)), {
-      rootMargin: "-40% 0px -55% 0px",
-    });
-    [...links, { id: "contact" }].forEach((l) => {
-      const el = document.getElementById(l.id);
-      if (el) obs.observe(el);
-    });
+    onScroll();
     return () => {
       window.removeEventListener("scroll", onScroll);
-      obs.disconnect();
     };
   }, []);
+
+  const navigateToSection = (id: string) => {
+    swarmStore.engine()?.cancelTour();
+    setActive(id);
+    setOpen(false);
+  };
 
   return (
     <header
@@ -75,6 +81,7 @@ export default function Header() {
             <Link
               key={l.id}
               href={`/#${l.id}`}
+              onClick={() => navigateToSection(l.id)}
               aria-current={active === l.id ? "true" : undefined}
               className={`rounded-full px-3.5 py-1.5 text-sm transition-colors ${active === l.id ? "bg-ink text-paper" : "text-muted hover:text-ink"}`}
             >
@@ -106,7 +113,7 @@ export default function Header() {
         <nav aria-label="Mobile" className="shell pb-4 md:hidden">
           <div className="card grid gap-1 p-2">
             {[...links, { id: "contact", label: "Contact" }].map((l) => (
-              <Link key={l.id} href={`/#${l.id}`} onClick={() => setOpen(false)} className="rounded-xl px-3 py-2.5 hover:bg-ink/5">
+              <Link key={l.id} href={`/#${l.id}`} onClick={() => navigateToSection(l.id)} className="rounded-xl px-3 py-2.5 hover:bg-ink/5">
                 {l.label}
               </Link>
             ))}

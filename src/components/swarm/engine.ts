@@ -157,6 +157,10 @@ export class SwarmEngine {
     this.restart();
   }
 
+  cancelTour() {
+    this.stopTour?.();
+  }
+
   goLive() {
     this.stopTour?.();
     this.halt();
