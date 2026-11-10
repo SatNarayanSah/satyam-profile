@@ -32,6 +32,7 @@ function loadBlogPosts(): BlogPost[] {
         description: getMetadataString(data, "description", filename),
         imageUrl: getMetadataString(data, "imageUrl", filename),
         date: getMetadataString(data, "date", filename),
+        updatedAt: typeof data.updatedAt === "string" ? data.updatedAt : undefined,
         readTime: getMetadataString(data, "readTime", filename),
         category: getMetadataString(data, "category", filename),
         markdown: content.trim(),

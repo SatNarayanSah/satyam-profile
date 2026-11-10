@@ -10,6 +10,7 @@ title: "My New Post"
 description: "A short summary for article cards and search results."
 imageUrl: /images/my-new-post.png
 date: "2026-11-10"
+updatedAt: "2026-11-10"
 readTime: "5 min read"
 category: "Web Development"
 ---
@@ -34,4 +35,4 @@ flowchart LR
 ```
 ````
 
-Posts are discovered from this folder automatically. Headings containing "example" receive an Example label, code fences are labeled Code, and Mermaid fences render as diagrams.
+Posts are discovered from this folder automatically. Update `updatedAt` when you make a meaningful content update; it is used for article metadata and the sitemap's last-modified date. Headings containing "example" receive an Example label, code fences are labeled Code, and Mermaid fences render as diagrams.
