@@ -75,10 +75,7 @@ export interface BlogPost {
   date: string;
   readTime: string;
   category: string;
-  content: {
-    heading: string;
-    text: string;
-  }[];
+  markdown: string;
 }
 
 export interface BlogPosts {

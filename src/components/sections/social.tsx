@@ -31,6 +31,17 @@ export const socials = data.socialLinks
   })
   .filter((s): s is { url: string; name: string; path: string } => s !== null);
 
+export function getWhatsAppUrl(message?: string) {
+  const whatsappLink = data.socialLinks.find(({ url }) => url.startsWith("https://wa.me/"))?.url;
+  if (!whatsappLink) {
+    throw new Error("WhatsApp contact URL is missing from data.json");
+  }
+
+  const url = new URL(whatsappLink);
+  if (message) url.searchParams.set("text", message);
+  return url.toString();
+}
+
 export function SocialIcon({ path, className = "h-4 w-4" }: { path: string; className?: string }) {
   return (
     <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden="true">

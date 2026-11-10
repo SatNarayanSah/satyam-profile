@@ -1,9 +1,10 @@
 import data from "~/../data/data.json";
 import Section from "./Section";
+import { getWhatsAppUrl } from "./social";
 
 type Project = (typeof data.projects)[number];
 
-// Placeholder links in the data ("https://github.com", "#contact") become a demo request instead.
+// Placeholder links in the data become a direct WhatsApp demo request.
 const links = (p: Project) => {
   const repo = p.buttons.find((b) => b.text === "Github" && b.url !== "https://github.com")?.url;
   const live = p.buttons.find((b) => b.text === "View" && b.url.startsWith("http"))?.url;
@@ -21,7 +22,7 @@ function Links({ p }: { p: Project }) {
           Live site <span aria-hidden="true">↗</span>
         </a>
       ) : (
-        <a data-swarm="text" href="#contact" className="btn-ghost !px-4 !py-2">
+        <a data-swarm="text" href={getWhatsAppUrl(`Hi Satyam, could you share more about ${p.title.trim()}?`)} target="_blank" rel="noopener noreferrer" className="btn-ghost !px-4 !py-2">
           Request a demo
         </a>
       )}

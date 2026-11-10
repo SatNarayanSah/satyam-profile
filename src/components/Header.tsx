@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { getWhatsAppUrl } from "./sections/social";
 
 const links = [
   { id: "work", label: "Work" },
@@ -84,9 +85,9 @@ export default function Header() {
 
         <div className="flex items-center gap-2">
           <ThemeToggle />
-          <Link href="/#contact" className="btn-primary hidden !py-2 sm:inline-flex">
+          <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer" className="btn-primary hidden !py-2 sm:inline-flex">
             Let&apos;s talk
-          </Link>
+          </a>
           <button
             type="button"
             aria-label="Menu"

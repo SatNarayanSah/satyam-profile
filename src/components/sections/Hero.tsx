@@ -1,5 +1,5 @@
 import data from "~/../data/data.json";
-import { socials, SocialIcon } from "./social";
+import { getWhatsAppUrl, socials, SocialIcon } from "./social";
 
 const stack = ["React", "Next.js", "TypeScript", "Node.js", "Express", "MongoDB", "Angular", "Python", "Django", "Tailwind CSS", "AWS", "Docker"];
 
@@ -50,7 +50,7 @@ export default function Hero() {
           </p>
 
           <div className="mt-7 flex flex-wrap items-center gap-3">
-            <a data-swarm="text" href="#contact" className="btn-primary">
+            <a data-swarm="text" href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer" className="btn-primary">
               Start a project <span aria-hidden="true">→</span>
             </a>
             <a data-swarm="text" href={data.buttons[0].url} target="_blank" rel="noreferrer" className="btn-ghost">

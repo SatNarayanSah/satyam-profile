@@ -59,5 +59,5 @@ export default async function BlogPage({ params }: { params: Promise<Params> }) 
   const { slug } = await params;
   const post = findPost(slug);
   if (!post) notFound();
-  return <BlogPostView post={post} />;
+  return <BlogPostView post={post} markdown={post.markdown} />;
 }
