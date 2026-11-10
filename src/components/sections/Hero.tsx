@@ -53,7 +53,7 @@ export default function Hero() {
             <a data-swarm="text" href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer" className="btn-primary">
               Talk about a project <span aria-hidden="true">→</span>
             </a>
-            <a data-swarm="text" href={data.buttons[0].url} target="_blank" rel="noreferrer" className="btn-ghost">
+            <a data-swarm="text" href={data.buttons[0].url} className="btn-ghost">
               Download CV <span aria-hidden="true">↓</span>
             </a>
           </div>
