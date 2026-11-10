@@ -121,7 +121,7 @@ export default function Hero() {
 
         <div className="mt-6 flex flex-wrap items-center gap-2">
           <span data-swarm="text" className="label mr-2">
-            Tools I use
+            Frameworks &amp; technologies
           </span>
           {stack.map((t) => (
             <span key={t} data-swarm="text" className="chip">

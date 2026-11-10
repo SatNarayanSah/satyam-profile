@@ -34,7 +34,14 @@ function SkillGroup({ title, names }: { title: string; names: string[] }) {
       <ul className="divide-y divide-line/10">
         {skills.map((s) => (
           <li key={s.name} data-swarm="text" className="flex items-center gap-3 py-2.5">
-            <img src={s.icon} alt="" className="h-5 w-5 object-contain" loading="lazy" />
+            <img
+              src={s.icon}
+              alt=""
+              className={`h-5 w-5 object-contain ${
+                ["NextJs", "Remix", "Express Js"].includes(s.name) ? "invert dark:invert-0" : ""
+              }`}
+              loading="lazy"
+            />
             <span className="text-[0.95rem]">{s.name}</span>
             <span className="ml-auto flex items-center gap-3">
               <Meter percent={s.percent} />
